@@ -128,3 +128,16 @@ footer {
 }
 
 
+.mentor::before {
+    content: 'mentor projektu:';
+    display: inline-block;
+    padding-right: 0.5em;
+    color: #888;
+}
+
+.team-members:before {
+    content: 'autoři:';
+    display: inline-block;
+    padding-right: 0.5em;
+    color: #888;
+}

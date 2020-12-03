@@ -34,6 +34,18 @@
     padding: 0 0 4rem calc((100% - 40rem) / 2);
 }
 
+.navigation {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;  
+    cursor: pointer;
+}
+
+.navigation:hover {
+    color: #F00;
+}
+
 @media screen and (max-width:  40rem) {
     #meetings {
         width: calc(100% - 2rem);

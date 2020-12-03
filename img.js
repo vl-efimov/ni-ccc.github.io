@@ -1,4 +1,6 @@
-window.onload = function() {
+function setImgs() {
+
+
     let imgs = document.getElementsByTagName("img");
 
     for(let i of imgs) {

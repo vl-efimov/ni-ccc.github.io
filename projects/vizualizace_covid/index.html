@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="img.js"></script>
+    <title>NI-CCC</title>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <a href="/">back to nic</a>
+        </div>
+    </header>
+    <section id="main">
+        <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
+        <!--    here is place for your stuff, see examples bellow -->
+
+
+        <h1>Vizualizace dat COVID-19</h1>
+
+        <h2>Co jsme chtěli udělat</h2>
+
+        <p>
+            Cílem bylo vytvoření prototypu imerzivního 3D prostředí, ve kterém by postupně vzniklo několik animovaných
+            měnících se "proudů" znázorňující <b>směr a intenzitu pohybu lidí</b> v čase v průběhu pandemie COVID-19 v
+            ČR.
+            Vzniknout by tak měla abstraktnější prostorová/pocitová mapa ve stylu flocking behaviour.
+        </p>
+
+        <p>
+            Divák by si pak mohl zvolit jestli by chtěl vizualizaci zažít z prvního pohledu pohyblivé "částice", být
+            tedy součástí proudu, nebo na proces nahlednout s odstupem, případně volnou kamerou. Kromě vizuální části by
+            pak data zároveň tvořila zvukovou/ambientní kompozici. Výsledek by mohl být prezentovaný jak na obrazovce,
+            tak v headsetu, nebo např. v CAMPu.
+        </p>
+
+        <p>
+            Inspirací je podobný pocit, jako můžou např. hráči zažívat u starších her série Black and White, kde sledují
+            ruch města/ vesnice, o kterou se starají. Proto bych se za zatím zaměřil na měnící se intenzitu jednotlivých
+            částí a animaci mezi jednotlivými stavy. To nám poslouží i jako měnící se pivot point (ať už budeme animovat
+            cokoliv).
+        </p>
+
+        <ul>
+            <li>Refik Anadol: https://youtu.be/UxQDG6WQT5s?t=224</li>
+            <li>Proteus: (indie walking simulator, s důrazem na estetiku a zvuk)
+                https://www.youtube.com/watch?v=BMQfCMIk4F0&t=280s</li>
+            <li>William H. Whyte: https://youtu.be/IsVZxanrL7s</li>
+            <li>Architecture of Radio: http://www.architectureofradio.com/</li>
+            <li>Flower (indie hra kde se hráč stává větrem): https://www.youtube.com/watch?v=ubmUJcwor3k</li>
+            <li>Daniel Shiffman https://youtu.be/mhjuuHl6qHM</li>
+        </ul>
+
+
+        <h2>Co jsme udělali</h2>
+
+        <p>
+            Vyzkoušeli jsme si dema na webové platformě v javascriptu za použití knihovny Three.js. Pokusy směřovaly na
+            vytvoření pohybujících se flocků ve 3D prostoru. Mimo knihovnu Three.js jsme našli ještě mnoho platforem a
+            javascriptových knihoven pro vizualizaci dat, v žádné jsme však nebyli schopni jednoduše dosáhnout kýženého
+            výsledku.
+        </p>
+
+        <p>
+            Zvážili jsme také možnosti znázornění pohybu ve 2D prostoru. Všechny dostupné knihovny však pracovaly s
+            velmi specifickými daty vymyšlenými pro vizualizaci počasí, tuto vývojovou větev jsme tedy také opustili.
+        </p>
+
+        <p>
+            Naše pozornost se tedy přesunula na platformu Unity. Udělali jsme demo vizualizace v Unity z jednoho dne
+            (24. 2. 2020) v průběhu pandemie COVID-19. Vybrali jsme 5 měst v okolí Prahy, na kterých jsme data
+            vizualizovali. Ve finální verzi jsou zobrazené pouze proudy z/do Prahy, znázorňující intenzitu mobility
+            obyvatel. Pohyby mezi ostatními městy jsme z vizualizace nakonec odebrali, protože jejich intenzita byla
+            natolik nízká, že nebylo možné graficky rozlišit tyto intenzity a znepřehlednilo to celkovou prezentaci dat.
+            Hlavní proudy směřují mezi jednotlivými městy a Prahou. Mobilita z jednoho města do Prahy je znázorněna
+            vyšší parabolou, směr z Prahy ven je znázorněn nižší parabolou. Směr je také indikován pohybujícími se
+            částicemi po křivce. Intenzita mobility je znázorněna světelnou intenzitou jednotlivých částic.
+
+            <img src="map_1.png"
+                alt="Mapa - vizualizace mobility obývatel během pandemie COVID-19 mezi Prahou a okolními městy (24.2.2020)"
+                style="max-width:100%">
+        </p>
+
+
+        <h2>Největší problémy</h2>
+
+        <p>
+            Technické provedení - průzkum spousty slepých cest
+            <ul>
+                <li>
+                    Javascript a jiné platformy na webu
+                </li>
+                <li>
+                    Snaha o to, aby flocky vypadaly opravdu jako hejna ptáků
+                </li>
+            </ul>
+        </p>
+        <p>
+            Jak vizualizovat data
+            <ul>
+                <li>Většina pohybu je mezi Prahou a regiony</li>
+                <li>Navzájem mezi regiony nic</li>
+                <li>Logaritmizace dat, podobné problémy</li>
+            </ul>
+        </p>
+        <p>
+            Omezená možnost přemýšlet dohromady jako tým/skupina
+            <ul>
+                <li>Na jediném prezenčním setkání jsme velmi rychle zjistili co funguje a co ne a vznikla největší
+                    část
+                    projektu</li>
+                <li>Na online setkáních plynula hromada nápadů, spousta se ale zahodila vždy až v pozdější fázi, kdy
+                    jsme zjistili, co nefunguje</li>
+            </ul>
+        </p>
+        <p>
+            Feedback na projekt až pozdě v semestru
+            <ul>
+                <li>Tím, že nebyl větší tlak na prezentaci práce už v průběhu semestru (klidně silně WIP věcí, ale
+                    ideálně vizuálně) jsme dlouho pracovali jen s nápady, které jsme nepřenášeli na papír/do kódu
+                </li>
+            </ul>
+        </p>
+
+        <h2>Co by šlo dělat dál?</h2>
+
+        <ul>
+            <li>Navázat vizualizace na reálná data</li>
+            <li>Dodělat interface - timeline, počty lidí, legenda…</li>
+            <li>Odlišení směrů pohybu (barevně/výška paraboly)</li>
+            <li>Odlišení geograficky - co je jaký kraj/jaké město - štítky</li>
+            <li>Nastavení kamery - víc pohledů/volný pohyb/přednastavená trasa kamery animovaná/kamera na jednom
+                particlu</li>
+            <li>Přidat budovy do Prahy</li>
+            <li>Prezentace rozdílů dat napříč dny - srovnání COVID/neCOVID</li>
+            <li>Sonifikace dat</li>
+        </ul>
+
+        <h2>Linky</h2>
+        <p>
+            Repozitář s kódem <a
+                href="https://github.com/brhliluk/NICCC-flocking">https://github.com/brhliluk/NICCC-flocking</a>
+        </p>
+
+        <!--    DO NOT CHANGE STUFF BELLOW -->
+    </section>
+    <footer></footer>
+</body>
+
+</html>

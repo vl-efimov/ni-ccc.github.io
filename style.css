@@ -141,3 +141,20 @@ footer {
     padding-right: 0.5em;
     color: #888;
 }
+
+.member {
+    list-style: none;
+}
+
+.member a {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    margin-right: .5em;
+    border-radius: 100%;
+    vertical-align: middle;
+}

@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="/style.css">
     <script src="/img.js"></script>
     <title>NI-CCC</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+
+    <style>
+        .overlay, canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -3 !important;
+            overflow: hidden;
+        }
+
+        .overlay {
+            z-index: -2 !important;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
 </head>
 
 <body>
@@ -20,28 +38,37 @@
     <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
     <!--    here is place for your stuff, see examples bellow -->
 
-
-    <h1>Your funky title</h1>
-    <p><span class="todo">text with todo</span></p>
-    <p><span class="code">text with code, url etc. </span></p>
-    <p>Normal paragraph and <a href="https://someurl.io">some links</a></p>
-    <h2>Bunch of images</h2>
-    <p>They are and always will be on the same row,  no matter how many of them you put there, can be enlarged</p>
-    <div class="imgs">
-        <img src="/files/vis_identityA.png" alt="Picture title A">
-        <img src="/files/vis_identityB.png" alt="Picture title B">
+    <div id='container'>
+        <div class="overlay"></div>
     </div>
-    <p>Also, a list of things:</p>
+
+    <h2>Jiří Šebele</h2>
+    <p>I make games, 3D models, website backgrounds and bad jokes.</p>
+    <p>I know my way around Procreate, Blender, Unreal Engine and C++. I don't know my way around Unity, taxes and the concept of happiness.</p>
+    
+    <h2>Project ideas</h2>
+    <p>I don't know, ask Susan in HR.</p>
     <ul>
-        <li>thing one</li>
-        <li>thing two!</li>
+        <li>Printing out tweets and mailing them to african kids who don't have internet</li>
+        <li>Putting sneakers on bees</li>
+        <li>AR app that puts masks on people so you can feel safe for once</li>
+        <li>AR app that removes masks from people so you can pretend everything's okay</li>
+        <li>Music you can taste</li>
+        <li>Something with blue</li>
     </ul>
-    <p>...and now they even have numbers:</p>
-    <ol>
-        <li>thing number one</li>
-        <li>thing number two!</li>
-    </ol>
-        
+    <p>No but really:</p>
+    <ul>
+        <li>Audio livestreams from places like squares, metro stops or the forest</li>
+        <li>Wavy pointcloud scans reacting to music</li>
+        <li>VR that makes you really tiny and/or big</li>
+        <li>Exploration of generated spaces</li>
+        <li>Live audio visualisation using Unreal</li>
+        <li>Projection mapping 3D stuff into fog</li>
+        <li>3D scanning dancers</li>
+    </ul>
+
+    <script src="sketch.js"></script>
+    
     <!--    DO NOT CHANGE STUFF BELLOW -->
     </section>
     <footer></footer>

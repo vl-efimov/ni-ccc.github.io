@@ -21,50 +21,44 @@
     <!--    here is place for your stuff, see examples bellow -->
 
 
-    <h1>Zvuky města - návrh projektu</h1>
+    <h1>Zvuky města</h1>
+    <p>Projekt předmětu NI-CCC v zimním semestru 2020-2021</p>
+    <p>Autoři: Adam Benda, Radka Hošková</p>
+
     <h2>Zvuky</h2>
     <p>Obklopuje nás tolik zvuků, že si to většinou ani neuvědomujeme. Tikání hodin, hovory náhodných lidí, projíždějící auta. Cvrlikání ptáků v parku, vítr čechrající listí, nebo narážející na stěny budov.</p>
     <p>Zvuk se mění podle toho kde jsme.. Šum přírody v parku, rušná křižovatka, vzdálený hukot dálnice, ruch lidských bytostí spěchajících za prací či zábavou. Zvuk se mění podle toho kdy jsme. V probouzejícím městě působí ranní občasný přejezd dodávky z pečivem jako akustická bomba - o pár hodin později už zaniká v hluku stovek jiných vozů. Různé druhy ptactva jsou aktivní v různou dobu.</p>
 
-    <h2>Projekt</h2>
+    <h2>Původní plán</h2>
     <p>Udělejme zvukový doprovod procházky městem. Zvuk se mění podle toho kde jsme a jak rychle jdeme. Udělejme to trošku přehnané; komiksová akustika, výrazný projev dostupných otevřených dat. Procházka městem v počítačové hře. Zavřete oči… to je náš projekt.</p>
 
-    <h2>Přínosy</h2>
+    <h2>Současný stav</h2>
     <ul>
-        <li>Při lockdownu budeme vzpomínat jak to bylo, když městem proudily tisíce lidí</li>
-        <li>Možný doprovod procházky ve street view</li>
-        <li>Tvoření zvukového doprovodu offline - na základě gpx záznamu</li>
+        <li><a href="https://zvukyprahy.m42.cz/">Webová Aplikace</a> (použitelná v Chrome)</li>
+        <li><a href="https://github.com/adasek/sounds-of-the-city">Github repozitář</a></li>
+    </ul>
+    <p>Byl implementován prototyp procházky městem. Šipkami se pohybujeme po mapě Prahy, která je poseta objekty. Objekty reprezentují body zájmu a z každého je slyšet různý zvuk. Zvuky se mixují dohromady a čím blíže jsme objektu, tím hlasitěji se od něj zvuky ozývají.</p>
+
+    <h2>Největší problémy</h2>
+    <ul>
+        <li>Netriviální technologický stack: NodeJS, Postgres + PostGIS</li>
+        <li>Implementováno částečné přihrávání dat ze serveru (tj. načte se pouze okolí uživatele)</li>
+        <li>3D zvuk poskytuje přímo prohlížeč - <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext">AudioContext</a></li>
+        <li>Synchronizace modelu 3d grafiky (ThreeJS) se zvukovým modelem</li>
     </ul>
 
-    <h2>Co se naučíme a prozkoumáme</h2>
-    <ul>
-        <li>Kde sehnat veřejně šiřitelné zvukové samply, jaká je jejich úroveň</li>
-        <li>Základní zákonitosti míchání zvuku (například v počítačových hrách)</li>
-        <li>Využitelné zdroje dat o prostředí na základě dané polohy</li>
-    </ul>
+    <h2>Co by šlo udělat dál</h2>
+    <p>Dalším krokem je přidání vícera druhů objektů a současně tedy i nalezení vhodných zvukových doprovodů. Na místě je i vylepšení modelů.</p>
+    <p>Uvažovalo se nad nějakou podobou interakce, například nahrávání zvuků uživateli aplikace</p>
 
-    <h2>Nápady a zdroje dat</h2>
-    <p>Seznam míst: schválně si zkuste představit jak jednotlivá místa zní</p>
-    <ul>
-        <li>park/ulice/budova</li>
-        <li>rušná ulice, křižovatka</li>
-        <li>zastávka bus/metro/tram</li>
-        <li>stanoviště tříděného odpadu</li>
-        <li>ambasáda státu (=>hymna)</li>
-        <li>počasí: vítr, déšť</li>
-        <li>rychlost chůze (tep)</li>
-        <li>kostel, kino, koncertní hala</li>
-        <li>škola, zuška</li>
-        <li>plavecký bazén, sportoviště</li>
-        <li>hospoda, tržiště, obchod</li>
-    </ul>
-
-    <h2>Hledám</h2>
-        <p>Vyvinu jednoduchý engine pro míchání zvuků. Kde se najde uplatnění je v hledání dat: </p>
-        <ol>
-            <li>geoinformace o výskytu dané vlastnosti: například seznam GPS bodů všech restaurací v Praze v csv; lepší formáty samozřejmě existují - například geojson</li>
-            <li>použitelné sámply k dané vlastnosti: s dostatečně permissivní licencí; loopable. Samozřejmě je možné použít random jeden z více sámplů, nebo vytvořit nějaký náhodný zvukový scénář</li>
-        </ol>
+    <h2>Screenshoty</h2>
+    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
+        <a href="zvuky_mesta/zvukyPrahy1.jpg" style="display:block; flex:1"><img src="zvuky_mesta/zvukyPrahy1.jpg" style="max-width:20em"></a>
+        <a href="zvuky_mesta/zvukyPrahy2.jpg" style="display:block; flex:1"><img src="zvuky_mesta/zvukyPrahy2.jpg" style="max-width:20em"></a>
+        <a href="zvuky_mesta/zvukyPrahy3.jpg" style="display:block; flex:1"><img src="zvuky_mesta/zvukyPrahy3.jpg" style="max-width:20em"></a>
+        <a href="zvuky_mesta/zvukyPrahy4.jpg" style="display:block; flex:1"><img src="zvuky_mesta/zvukyPrahy4.jpg" style="max-width:20em"></a>
+        <a href="zvuky_mesta/zvukyPrahy5.jpg" style="display:block; flex:1"><img src="zvuky_mesta/zvukyPrahy5.jpg" style="max-width:20em"></a>
+    </div>
 
     <!--    DO NOT CHANGE STUFF BELLOW -->
 </section>

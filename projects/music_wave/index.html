@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-<!--     <link rel="stylesheet" href="../../style.css"> -->
+<!--     <link rel="stylesheet" href="/style.css"> -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <style>
+        .actual {
+            list-style-image: url('images/arrow.png');
+        }
+        .progress-image {
+            width: 100%;
+        }
+    </style>
     <script src="img.js"></script>
     <title>NI-CCC</title>
 </head>
@@ -55,7 +64,7 @@
     
     <h2>Plánovaný postup</h2>
     <ol>
-        <li>Analýza</li>
+        <li class="actual">Analýza</li>
             <ul>
                 <li>Podobných prací</li>
                 <li>Možností postupu</li>
@@ -75,6 +84,18 @@
             </ul>
         
     </ol>
+    <h2>Aktuální progress</h2>
+    <p>Zkoumání výsledků hranové detekce.</p>    
+    <p>
+        <img class="progress-image" src="images/progress/00.png">
+        <img class="progress-image" src="images/progress/01.png">
+        <img class="progress-image" src="images/progress/02.png">
+        <img class="progress-image" src="images/progress/03.png">
+    </p>
+    <p>Experimentování s Supercolliderem</p>    
+    <p>
+        <img class="progress-image" src="images/progress/supercollider.png">
+    </p>
     
 
     <!--    DO NOT CHANGE STUFF BELLOW -->

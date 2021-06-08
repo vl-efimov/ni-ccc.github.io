@@ -49,7 +49,38 @@
     
     <h2>PROGRES</h2>
     <p>Máme už 3D model a booklet celého projektu.</p>
+
+    <h2>Práce na projektu</h2>
+    <h3>Čištění 3D modelu</h3>
+    <p>
+        Další částí projektu bylo upravit celý prodel do nějakého "snesitelného" 3D modelu. Pracovní flow architektů je jiné, než 
+        jaké jsme potřebovali do VRka. Model se skládal z velkého množství nehomogenních textur, origin celého 3D modelu byl posunutý 
+        o několik kilometrů mimo celý model. Proto jsme nejdříve model pročistili o nepotřebné části, posunuli origin cca do středu 
+        modelu a odmazali jsme veškeré úpravy země, které se v modelu nacházely (země se byla vytvořená z několika ploch, které
+        znázorňovaly to, jakým způsobem by úpravy terénu byly prováděny).
+    </p>
+    <h3>Úpravy v Blender</h3>
+    <p>
+        V další části jsme napsali skript v Blenderu, který do modelu doplnil textury (obarvení) podle názvů jednotlivých 3D objektů v modelu. 
+        Například objektům se jménem "holz" jsme nastavili dřevěnou barvu.
+    </p>
+    <p>
+        Protože se v modelu měly nacházet stromy, které však nebyly v modelu vyexportovány, napsali jsme skript, který měl na jednotlivé
+        body doplnit model stromu. Těchto bodů bylo v modelu však tak velké množství, že se nám nepodařilo, z důvodu nedostatečného výpočetního výkonu,
+        umístit stromy na všechna místa, kde by se měly nacházet.
+    </p>
+    <h3>VR v Unity</h3>
+    <p>
+        Již upravený model jsme nahrály do Unity, kde jsme s pomocí Steam VR pluginu spustily VR (Vive Pro). Zde jsme si museli
+        pohrát s možnostmi pohybu. Nakonec jsme zvolili způsob teleportace. Ve VRku je tedy možné se pohybovat po celé ploše podlahy,
+        plus v patrech jednotlivých budov. Do těchto pater je možné se dostat pomocí Teleporting Pointů, které se nacházejí na schodech.
+    </p>
     
+    <video width="900" height="600" controls>	
+	  	<source src="ukazka.mov" type="video/mp4">
+			Your browser does not support the video tag.
+	</video>
+
     <div style="display:flex;flex-direction:row;flex-wrap: wrap">
         <a href="images/booklet1.png" style="display:block; flex:1"><img src="images/booklet1.png" style="max-width:20em"></a>
     </div>

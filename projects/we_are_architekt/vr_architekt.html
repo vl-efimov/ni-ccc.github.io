@@ -41,15 +41,19 @@
             </ul>
 
     <h2>CO</h2>
-    <p>Převést jeden z projektů do VR a obohatit ho o efekty, které doplní scénu a v rámci architektonického návrhu jsou jen popsány.</p>
-    <p>Vedlejším produktem by mohla být pipeline pro ostatní studenty architektury pro zobrazení jejich návrhů ve VR. Díky tomu by mohli posunout dál prezentaci svých projektů.</p>
+    <p>Převést jeden z projektů architektů do VR.</p>
+    
+    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
+        <a href="images/booklet1.png" style="display:block; flex:1"><img src="images/booklet1.png" style="max-width:30em"></a>
+    </div>
     
     <h2>Jak</h2>
-    <p>Přemýšlíme, jestli použít Unity nebo Unreal.</p>
+    <p>Za použití Blenderu, Unity a Vive Pro brýlí.</p>
     
-    <h2>PROGRES</h2>
-    <p>Máme už 3D model a booklet celého projektu.</p>
-
+    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
+        <a href="images/nada.png" style="display:block; flex:1"><img src="images/nada.png" style="max-width:30em"></a>
+    </div>
+    
     <h2>Práce na projektu</h2>
     <h3>Čištění 3D modelu</h3>
     <p>
@@ -61,29 +65,36 @@
     </p>
     <h3>Úpravy v Blender</h3>
     <p>
-        V další části jsme napsali skript v Blenderu, který do modelu doplnil textury (obarvení) podle názvů jednotlivých 3D objektů v modelu. 
+        V další části jsme napsali <a href="src/nic_script_v2_texture.py">skript</a> v Blenderu (v2.9.12), který do modelu doplnil textury (obarvení) podle názvů jednotlivých 3D objektů v modelu. 
         Například objektům se jménem "holz" jsme nastavili dřevěnou barvu.
     </p>
     <p>
-        Protože se v modelu měly nacházet stromy, které však nebyly v modelu vyexportovány, napsali jsme skript, který měl na jednotlivé
+        Protože se v modelu měly nacházet stromy, které však nebyly v modelu vyexportovány, napsali jsme <a href="src/nic_script_v2.py">skript</a>, který měl na jednotlivé
         body doplnit model stromu. Těchto bodů bylo v modelu však tak velké množství, že se nám nepodařilo, z důvodu nedostatečného výpočetního výkonu,
         umístit stromy na všechna místa, kde by se měly nacházet.
     </p>
+    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
+        <a href="images/trees.png" style="display:block; flex:1"><img src="images/trees.png" style="max-width:30em" caption="Neco"></a>
+    </div>
+    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
+        <a href="images/example.png" style="display:block; flex:1"><img src="images/example.png" style="max-width:30em"></a>
+    </div>
     <h3>VR v Unity</h3>
     <p>
-        Již upravený model jsme nahrály do Unity, kde jsme s pomocí Steam VR pluginu spustily VR (Vive Pro). Zde jsme si museli
+        Již upravený model jsme nahrály do Unity (v2019.4.22f1), kde jsme s pomocí Steam VR pluginu spustily VR (Vive Pro). Zde jsme si museli
         pohrát s možnostmi pohybu. Nakonec jsme zvolili způsob teleportace. Ve VRku je tedy možné se pohybovat po celé ploše podlahy,
         plus v patrech jednotlivých budov. Do těchto pater je možné se dostat pomocí Teleporting Pointů, které se nacházejí na schodech.
     </p>
+    
+    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
+        <a href="images/random_colors.png" style="display:block; flex:1"><img src="images/random_colors.png" style="max-width:30em"></a>
+    </div>
     
     <video width="900" height="600" controls>	
 	  	<source src="ukazka.mov" type="video/mp4">
 			Your browser does not support the video tag.
 	</video>
 
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="images/booklet1.png" style="display:block; flex:1"><img src="images/booklet1.png" style="max-width:20em"></a>
-    </div>
 
     <!--    DO NOT CHANGE STUFF BELLOW -->
 </section>

@@ -100,7 +100,11 @@
     
     <h3>Implementace</h3>
     
-    <p>Napojení na vertikální směr
+    <p>Napojení na vertikální směr</p>
+    <p>Nástroje jsou zatím generovány náhodně. Všechno ostatní - výška tónu a jeho délka je určena na základě jasu obrázku.<br>
+    Výška tónu vzniká jako hodnota jasu určena maximem ve sloupci v obrázku, oříznutá dle rozsahu příslušného hudebního nástroje.<br>
+    Délka tónu se počítá na základě počtu hodnot ve sloupci v obrázku podobných jeho maximu.<br>
+    Nejlepší výsledky vznikají, pokud je generováno hodně bicích nástrojů.<br>
         <video width="800" height="640" controls>
             <source src="video/factory_song.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -117,7 +121,7 @@
     <p>One to one -> bez vztahu k okolí vodorovně, se vztahem k okolí svisle</p>
     <p>
         <img class="progress-image" src="progress/one_to_one/bridge.jpg">
-        <audio controls autoplay>
+        <audio controls autoplay=false>
             <source src="progress/one_to_one/pokus1.mp3" type="audio/ogg">
             Your browser does not support the audio element.
         </audio>
@@ -128,7 +132,7 @@ href="progress/one_to_one/pokus1.musicxml">Music XML</a>
         
         
         <img class="progress-image" src="progress/one_to_one/zajic.jpg">
-        <audio controls autoplay>
+        <audio controls autoplay=false>
             <source src="progress/one_to_one/zajic.mp3" type="audio/ogg">
             Your browser does not support the audio element.
         </audio>
@@ -138,7 +142,7 @@ href="progress/one_to_one/zajic.musicxml">Music XML</a>
         <br>
         
         <img class="progress-image" src="progress/one_to_one/zajic2.jpg">
-        <audio controls autoplay>
+        <audio controls autoplay=false>
             <source src="progress/one_to_one/zajic2.mp3" type="audio/ogg">
             Your browser does not support the audio element.
         </audio>

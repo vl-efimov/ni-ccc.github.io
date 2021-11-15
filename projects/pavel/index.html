@@ -28,16 +28,41 @@
     <h2>Nápad</h2>
     <p>Hlavní myšlenka, je ta, že by se dala vytvořit aplikace v Pythonu (ideální technologie), která by pomocí webové kamery snímala frekvenci srdečního tepu, případně i frekvenci dýchání. Na taková data by se však dobře dala navázat nějaká interaktivní vizualizace. Dala by se vytvořit i nějaká velkoprostorová vizualizace (SAGE), protože snímat tep jde takto i z více lidí najednou, s jediným problémem snižené přesnosti měření.</p>
 	
-    <h2>Existující řešení</h2>
-    <p><a href="https://github.com/thearn/webcam-pulse-detector">webcam-pulse-detector</a>
+    <h2>Nápady na vizualizaci</h2>
+    <p>
+    V jakých rozmezí se můžou vstupní hodnoty pohybovat (za minutu):
+    <ul>
+        <li>Frekvence srdečního tepu: 60-90 (v klidu) a 90 - 160 (max 214) (při zátěži)</li>
+        <li>Rozsah srdečního tepu u atletů: 40-214</li>
+        <li>Dechová frekvence: 16-20 (v klidu)</li>
+    </ul>
+    
+    Cílem projektu je detekovat hlavně tepovou frekvenci a tu dechovou jen pokud to bude možné. Pro vizualizaci je tedy dobré očekávat jako vstup hlavně jednu hodnotu co se bude pravděpodobně pohybovat někdy mezi 60-160. Ideálně bude možné detekovat tepovou frekvenci více uživatelům najednou (pokud to rozumně půjde).
+    </p>  
+    
+    <p>
+    Jelikož jsou hodnoty celkem vysoké, tak by se dala vizualizace vytvořit v nějakém měřítku k tepu, nebo by se to muselo vymyslet tak aby nevypadala úplně jako stroboskop.
+    </p>   
+    
+    <h2>Existující řešení detekce tepu</h2>
+    <h3><a href="https://github.com/thearn/webcam-pulse-detector">webcam-pulse-detector</a> </h3>
+    <p>
     Níže je vidět toto řešení v běhu. V tu chvíli mi to ukazovalo srdeční puls celkem přesně. Porovnával jsem totiž hodnoty s fitness náramkem na ruce (ten není stoprocentně přesný ale minimálně orientačně ano). Je ale nutné říct, že hodnoty často skákali někam úplně jinam. Například tedy ze 70 hned na 50 a pak hned na 100. To však může být způsobeno nekvalitní kamerou a jejím šumem. 
-      
+    </p>
+    
+    <h3>Další řešení</h3>
+    <p>
+    Předchozí řešení je psané v Pythonu, což má své velké výhody. Nicméně existuje i <a href="https://github.com/serghov/heartRate">řešení</a> psané v JavaScriptu, jehož výhoda zpočívá ve snadném zpřístupnění na internetu. To ale nebylo vyzkoušeno.
+    </p>
+    
+    <p>
+    Jiné řešení co jsem našel na <a href="https://www.youtube.com/watch?v=IV51CYZsBOU">videu</a> je zajímavé tím, že využívá tváří jako čtecích ploch srdečního tepu. To řešní ale nebylo ozkoušeno.
     </p>
     
     <p>
         <img src="get_pulse.jpg"
             alt="Ukázka existujícího řešení"
-            style="max-width:100%">
+            style="max-width:50%">
     </p>
     
     <h2>Plán</h2>
@@ -45,14 +70,16 @@
     <ul>
         <li>1. Aplikace detekuje obličej</li>
         <li>2. Aplikace detekuje tepovou frekvenci</li>
-        <li>2b. (případně) Aplikace detekuje dechovou frekvenci</li>
+        <li>2b. Aplikace detekuje tepovou i při změně polohy uživatele</li>
+        <li>2c. Aplikace detekuje tepovou frekvenci více uživatelům najednou</li>
+        <li>2d. (případně) Aplikace detekuje dechovou frekvenci</li>
         <li>3.Vytvoření vizualizace vhodné pro vytvořená data</li>
         <li>4. Napojení vizualizace na detekční aplikaci</li>
     </ul>
   
     <h2>Rozpracování</h2>
     <p>
-    	Momentálně byla vytvořena aplikace detekující obličeje a oči(modře) a nacházející zónu měření (červeně)
+    	Momentálně byla vytvořena aplikace detekující obličeje a oči(modře) a nacházející zónu měření (červeně). Na obrázku je vidět příprava na plochu měření srdečního tepu, která je shodující s tou z existujícího měření. To lze měřit však ze všech dalších ploch větších ploch pokrytých pouze kůží (například tváří). 
     	</break>
     </p>
     <p>

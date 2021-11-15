@@ -28,6 +28,18 @@
     <h2>Nápad</h2>
     <p>Vedoucího laboratoře napadlo, že by se dala vytvořit aplikace v Pythonu (ideální technologie), která by pomocí webové kamery snímala frekvenci srdečního tepu, případně i frekvenci dýchání. Na taková data by se však dobře dala navázat nějaká interaktivní vizualizace. Dala by se vytvořit i nějaká velkoprostorová vizualizace (SAGE), protože snímat tep jde takto i z více lidí najednou, s jediným problémem snižené přesnosti měření.</p>
 	
+    <h2>Existující řešení</h2>
+    <p><a href="https://github.com/thearn/webcam-pulse-detector">webcam-pulse-detector</a>
+    Níže je vidět toto řešení v běhu. V tu chvíli mi to ukazovalo srdeční puls celkem přesně. Porovnával jsem totiž hodnoty s fitness náramkem na ruce (ten není stoprocentně přesný ale minimálně orientačně ano). Je ale nutné říct, že hodnoty často skákali někam úplně jinam. Například tedy ze 70 hned na 50 a pak hned na 100. To však může být způsobeno nekvalitní kamerou a jejím šumem. 
+      
+    </p>
+    
+    <p>
+        <img src="get_pulse.jpg"
+            alt="Ukázka existujícího řešení"
+            style="max-width:100%">
+    </p>
+    
     <h2>Plán</h2>
     <p>Cílem je vytvořit aplikaci ve dvou fázích </p>
     <ul>
@@ -41,6 +53,9 @@
     <h2>Rozpracování</h2>
     <p>
     	Momentálně byla vytvořena aplikace detekující obličeje a oči(modře) a nacházející zónu měření (červeně)
+    	</break>
+    </p>
+    <p>
         <img src="face_detection.jpg"
             alt="Momentálně byla vytvořena aplikace detekující obličeje a oči(modře) a nacházející zónu měření (červeně)"
             style="max-width:100%">

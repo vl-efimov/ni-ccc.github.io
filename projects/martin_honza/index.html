@@ -37,8 +37,37 @@
         <li>Pronajmout GPU a naučit model</li>
         <li>Vytvořit uživatelské rozhrání, které bude za použití naučeného modelu transformovat fotky</li>
     </ul>
-
-
+	
+	<h2>Postup</h2>
+	<h4>Získání datasetu</h4>
+	<p>Neuronová síť, kterou jsme použili se skládá ze čtyřech modelů, jeden dělá z obrazů fotky, další z fotek obrazy a další dva, které se snaží ověřit pravost výsledků, které generují předchozí dva modely. Jelikož je tato síť velmi robustní, je potřeba velký výpočetní výkon. Abychom mohli naší dvě neurovnové sítě natrénovat, bylo potřeba získat dva trénovací dataset. Pro tento účel jsme
+	vytvořili jednoduchý scraper, který procházel <a href="https://www.wikiart.org/">wikiarts</a> a stahoval obrázky děl Augusta Renoira. Dataset pro druhou neuronovou síť se skládal z fotek krajin a portrétů.</p>
+	<h4>Učení modelu</h4>
+	<p>Modely se na trénovacích datech učí v iteracích, kterých je potřeba velký počet. Na klasickém CPU trvá jedna iterace i několik sekund přičemž k dosažení přijetelných výsledků je jich potřeba několik desítek tisíc. Tento proces lze urychlit spuštěním výpočtů na výkonném GPU.</p>
+	<p>Protože v týmu nedisponujeme dostatečně výkonnými počítači, snažili jsme se nalézt nějaké cloudové řešení. Nejprve jsme zvažovali využít studentského účtu ve službě Microsoft Azure. Ten se ale nevztahuje na stroje s dedikovanými grafickými kartami. Obdobná situace platí i pro Amazon Web Services.
+	Kdybychom se rozhodli je využít, konečná cena by se pohybovala v řádech stovek dolarů. Další alternativou byl <a href="https://colab.research.google.com/">Google Colab</a>. Zde je ovšem nevýhoda to, že uživatel musí být podobu výpočtu aktivní a vyplňovat reCAPTCHA requesty jinak je odpojen. Doba běhu je navíc omezena na několik hodin.</p>
+	<p>Nakonec se nám tento problém podařilo vyřešit díky službe <a href="https://www.kaggle.com">Kaggle</a>. Ta nám umožnila na ~9 hodin zdarma spustit náš kód na výkonném GPU.</p>
+	<h4>Výsledky</h4>
+	<p>Protože jsme byli omezeni časem, museli jsme se uchýlit ke kompromisu - velikost transformavaných obrázků je omezena na 256x256 pixelů. V průběhu učení naší sítě jsme postupně ukládali generované výsledky. Celkem bylo provedeno 40 000 iterací a výstup jedné z posledních lze vidět níže.</p>
+	<div style="text-align: center;">
+		<div style="display: inline-block; margin-left: auto; margin-right: auto;">
+			<img src="img2renoir.png">
+			<p>Převod z fotek na obraz ve stylu Renoira</p>
+		</div>
+		<div style="display: inline-block; margin-left: auto; margin-right: auto;">
+			<img src="renoir2img.png">
+			<p>Převod obrazů Renoira na 'realistické' fotografie</p>
+		</div>
+	</div>
+	<p>Výsledný model jsme se pokusili aplikovat i na video soubory. Nejprve jsme video rozdělili na jednotlivé snímky a ty pak transformovali.</p>
+	<div style="text-align: center;">
+		<video controls loop autoplay>
+			<source src="video_final.mp4" type="video/mp4">
+		</video>
+	</div>
+	<h3>Závěr</h3>
+	<p>Během realizace našeho plánu jsme se seznámili s principy fungování neuronových sítí a strojového učení. Naše poznatky jsme uvedli do praxe a i přes různé problémy se nám podařilo vytvořit model, který funguje. Uvědomujeme si, že výsledky stále nejsou dokonalé a chtěli bychom na naší práci navázat, protože věříme, že můžeme náš program ještě zdokonalit.
+	Celkově hodnotíme tento projekt velmi pozitivně, protože jsme si mohli vyzkoušet tyto technologie za účel, který jsme si sami vybrali a nejen v rámci akademických příkladů a během omezeného času jako úkol v semestru.</p>
     <!--    DO NOT CHANGE STUFF BELLOW -->
 </section>
 <footer></footer>

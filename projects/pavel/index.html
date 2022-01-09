@@ -21,9 +21,15 @@
     <!--    here is place for your stuff, see examples bellow -->
 
 
-    <h1>Heart rate webcam detector + visualization</h1>
+    <h1>Pulse Detector (+ visualization)</h1>
     <p>Projekt předmětu NI-CCC v zimním semestru 2020-2021</p>
-    <p>Autoři: Pavel Kříž, někdo další??</p>
+    <p>Autoři: Pavel Kříž</p>
+	
+	<p>
+        <img src="Pulse_detector.png"
+            alt="Hlavní detekční obrazovka"
+            style="max-width:100%">
+    </p>
 
     <h2>Nápad</h2>
     <p>Hlavní myšlenka, je ta, že by se dala vytvořit aplikace v Pythonu (ideální technologie), která by pomocí webové kamery snímala frekvenci srdečního tepu, případně i frekvenci dýchání. Na taková data by se však dobře dala navázat nějaká interaktivní vizualizace. V případě, že by se někdo připojil a nedělal bych to v jednom, tak by se dala vytvořit i nějaká vizualizace, třeba i větší (SAGE...), protože snímat tep jde takto i z více lidí najednou, s jediným problémem snižené přesnosti měření.</p>
@@ -90,6 +96,75 @@
             alt="Momentálně byla vytvořena aplikace detekující obličeje a oči(modře) a nacházející zónu měření (červeně)"
             style="max-width:100%">
     </p>
+	<p>
+    	Následně byla vytvořena jednoduchá kostra algoritmu měření, která sbírá data z obrazovky a velice jednoduchým způsobem je zobrazuje. Nyní, je potřeba data už jen zanalyzovat, získat frekvence a jejich dominance.
+    </p>
+	
+	<h2>Dokončení</h2>
+    <p>
+    	Do dokončení bylo potřeba ještě mnoho práce. Mnohem více než bylo potřeba na popsání kapitoly rozpracování. Bylo potřeba totiž nejen implementovat analýzu dat ale také je lépe vizualizovat, přegramovat kód do praktičtější struktury, přidat uživatelské rozhraní, nastavení kamery a celé to doladit a zlehka otestovat. Výsledná aplikace vypadá pak nějak takto:
+    </p>
+	
+	<p>
+        <img src="Pulse_detector.png"
+            alt="Hlavní detekční obrazovka"
+            style="max-width:100%">
+    </p>
+	
+	<p>
+    	Na předchozím obrázku je hlavní snímací část aplikace, která se zobrazuje ve dvou oknech. Nastavení kamery je poměrně snadné a společně s dialogem zakotvení obličeje je vidět na následujících obrázcích:
+    </p>
+  
+	<p>
+        <img src="Pulse_detector_camera_setup.jpg"
+            alt="Nastavení kamery"
+            style="max-width:100%">
+    </p>
+	
+	<p>
+        <img src="Pulse_detector_face_setup.jpg"
+            alt="Zamknutí obličeje pro snímání"
+            style="max-width:100%">
+    </p>
+	
+	<p>
+    	Je dobré poznamenat, že na první pohled nepraktické a krkolomné zamknutí obličeje je důležité pro vyšší přesnost měření.
+    </p>
+	
+	<p>
+    	Výsledná přesnost pak byla otestována vůči fitness náramku, který měří tep ze zápěstí (náramek měří podle veřejných testů tep tak uspokojivě přesně). Ukázalo se, že přesnost detekce z obrazu nějakou výpovědní hodnotu má, přestože nejvíc záleží na webkameře a světelných podmínkách. Nelze však říct bez většího testování nakolik, je taková přesnost spolehlivá či nespolehlivá.
+    </p>
+	
+	<p>
+		Následující obrázek ukazuje šťastný případ kdy, se detekované frekvence tepu setkaly (při klidovém scénáři měření):
+	</p>
+	
+	<p>
+        <img src="happy.jpg"
+            alt="Zamknutí obličeje pro snímání"
+            style="max-width:50%">
+    </p>
+	
+	<p>
+		Na dalším obrázku je vidět naopak nedokonalost měření. Kdy je sice v momentě focení správná frekvence změřena dobře (jde o zlomek sekundy) avšak průběžný výsledek ukazuje chybný výpočet tepové frekvence. Na důležitá místa ukazují šipky ( při neklidném scénáři měření - po cvičení):
+	</p>
+	
+	<p>
+        <img src="not_so_happy.jpg"
+            alt="Zamknutí obličeje pro snímání"
+            style="max-width:50%">
+    </p>
+	
+	<h2>Spuštění</h2>
+	<p>
+		Na spuštění je potřeba spustit program následovně "python3 ./pulse_detector.py". Na spuštění programu je potřeba právě Python 3 a instalovaný balíček opencv-python. Kód programu/aplikace je možné v adresáři "src" v této složce.
+	</p>
+	
+	<h2>Zhodnocení stavu po dokončení</h2>
+	<p>
+		Bohužel se nepodařilo najít spolupracovníka na projektu, takže byl projekt dokončen v omezeném rozsahu. Přes další komplikace se však podařilo dokončit alespoň několik bodů ze stanovených cílů (vizualizace dat se dá hodnotit jako triviální implementace bodu "vizualizace"). Na výsledku je vidět inspirace existujícím řešením. Původně byla snaha o inovátorský přístup, nakonec se ale ukázalo, že ověřený přístup bude správnou cestou. V porovnání s existujícím řešení, jsou některé věci horší (komplexita výpočtu, animace na čele) a některé naopak lepší (nastavení kamery, prezentace dat). Dále pak přesnost byla v rámci rychlého testování ohodnocená jako srovnatelná s existujícím řešením uvedeným na této stránce. Protože, by bylo ale možné dost věcí stále zlepší, tak lze zhodnotit výsledek pozitivně, protože je alespoň srovnatelný s existujícím řešením a nabízí prostor ke zlepšení a napojení případné vizualizace.
+	</p>
+	
   
     <!--    DO NOT CHANGE STUFF BELLOW -->
 </section>

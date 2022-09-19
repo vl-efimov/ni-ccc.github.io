@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+<!--     <link rel="stylesheet" href="../../style.css"> -->
+    <script src="/img.js"></script>
+    <title>NI-CCC</title>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <a href="../">back to nic</a>
+        </div>
+    </header>
+    <section id="main">
+    <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
+    <!--    here is place for your stuff, see examples bellow -->
+
+    <style>        
+        body {
+            font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+            background-color: blueviolet;
+        }
+
+        @-webkit-keyframes rotating /* Safari and Chrome */ {
+        from {
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        }
+        @keyframes rotating {
+        from {
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        }
+        .rotating {
+            font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+            font-size: 50px;
+        -webkit-animation: rotating 2s linear infinite;
+        -moz-animation: rotating 2s linear infinite;
+        -ms-animation: rotating 2s linear infinite;
+        -o-animation: rotating 2s linear infinite;
+        animation: rotating 2s linear infinite;
+        }
+
+        .rainbow-text {
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        }
+
+        .blink {
+            color:red;
+        animation: 1s linear infinite condemned_blink_effect;
+        }
+
+        @keyframes condemned_blink_effect {
+        0% {
+            visibility: hidden;
+        }
+        50% {
+            visibility: hidden;
+        }
+        100% {
+            visibility: visible;
+        }
+        }
+
+        .glow {
+            font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+        }
+
+        #borderimg1 { 
+        border: 30px solid transparent;
+        padding: 15px;
+        border-image: url(/members/belovdmi/rose.png) 1000 stretch;
+        }
+    </style>
+
+    <h1 class="rotating rainbow-text" style="width: 400px; height: 80px; text-align: center;" >Dima Belov</h1>
+
+    <div class="imgs" >
+        <img src="profile.jpg" alt="Person" style="width: 1000px; height: 300px;">
+    </div>
+
+    <h2 style="background-color: black; color: green; text-decoration-line: underline;">O mně</h2>
+    <p style="font-style:oblique; color: blue; font-weight: 600;">Ahoj jsem Dima a mou vasni je vyvoj FE. Jak je videt memu talentu by mohl zavidet i Picasso. Krome frontendu taky rad cvicim a piju. Rad tyto 2 aktivity spolu kombinuji. Jinak jsem v pravaku na magistru a doufam ze to bude gucci.</p>
+
+    <h2 class="glow">Proč NI-CCC</h2>
+    <p>Krome kreditu jsem v sobe chtel probudit tvuci osobu zejmena proto jsem se na predmet prihlasil.</p>
+    
+    <div id="borderimg1">    
+        <h3 class="blink">Nápady na práci</h3>
+        <ul>
+            <li>Rhythm game s kytickama</li>
+            <li>Malovani pomoci CSS</li>
+        </ul>
+    </div>
+    <h2>Kontakt</h2>
+    <ul>
+        <li><b>eMAiL:</b>belovdmi@fit.cvut.cz</li>
+    </ul>
+
+
+    <!--    DO NOT CHANGE STUFF BELLOW -->
+    </section>
+    <footer></footer>
+</body>
+
+</html>

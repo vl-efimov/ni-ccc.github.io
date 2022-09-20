@@ -1,0 +1,89 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Sintony', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #000;
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    letter-spacing: 4px;
+    overflow: hidden;
+    clip: rect(0, auto, auto, 0);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0 20px;
+}
+
+.dark_mode {
+    position: relative;
+}
+
+.dark_mode:hover::after{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    content: "Not ready yet...";
+    color: #f00;
+}
+
+.fixed {
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+}
+
+.fixed.moved {
+    top: 85%;
+    width: 90%;
+}
+
+.exact_text {
+    text-transform: none;
+}
+
+.reveal {
+    position: relative;
+    transform: translateX(800px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.active {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.reveal.hidden {
+    transform: translateX(-800px);
+    opacity: 0;
+}
+
+.canvas {
+    position: fixed;
+    width: 380px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
+    background-color: #fff;
+    box-shadow: #444 -3px 8px 8px;
+    opacity: 0;
+    transition: 2s opacity ease;
+}
+
+.canvas.active {
+    opacity: 1;
+}

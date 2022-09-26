@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+      <title>Web (hrytsana)</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <script src="https://kit.fontawesome.com/2a2562b283.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <section class="header">
+         <nav>
+            <div class="nav-links" id="navLinks">
+               <i class="fa fa-times-circle-o" onclick="hideMenu()"></i>
+               <ul>
+                  <li><a href="#info">GENERAL INFO</a></li>
+                  <li><a href="#nic">NI-CCC</a></li>
+                  <li><a href="#ideas">IDEAS</a></li>
+                  <li><a href="#contact">CONTACT</a></li>
+               </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+         </nav>
+      </section>
+
+      <section class="info" id="info">
+         <div class="row">
+            <div class="column left" style="float: left">
+               <h1>Anastasiia Solomiia Hrytsyna</h1>
+               <p>
+                  Nastiia. Instead of this long strange name, just call me Nastiia (always written with two 'i', not 'y' - it is important !).
+                  Although this does not always help. Don't try to speak Czech with me quickly - I won't understand you, so I will just smile back.
+                  Actually, I moved here recently, as before I finished Computer Science at FIIT STU in Bratislava. Therefore, I feel confident
+                  pretending that I know Slovak well (but I don't). I am also passionate about medicine (as a child I dreamed of becoming a surgeon).
+                  For this reason, I always try to combine my career in IT with it. This is not really relevant to our subject (the whole speech about
+                  myself isn't...), but in case you are also interested how we can improve some methods of patients treatment - I will be happy to
+                  talk to you.
+               </p>
+            </div>
+            <div class="column right" style="float: right">
+               <img src="images/1.png" />
+            </div>
+         </div>
+      </section>
+
+      <section class="nic" id="nic">
+         <h3>WHY NI-CCC</h3>
+         <p>Several reasons why I decided to choose this subject</p>
+
+         <div class="row">
+            <div class="nic-col">
+               <h5>Reason 1</h5>
+               <p>
+                  This subject has a cool name. For some unknown reasons, I decided that it will cheer up my poor schedule of a typical programmer :)
+               </p>
+            </div>
+            <div class="nic-col">
+               <h5>Reason 2</h5>
+               <p>Here there is an opportunity to expand my knowledge and to find some extraordinary people for a future cooperation</p>
+            </div>
+            <div class="nic-col">
+               <h5>Reason 3</h5>
+               <p>I was hoping that I wouldn't work with the webs (yeah, I am really exited about this task)</p>
+            </div>
+         </div>
+      </section>
+
+      <section class="ideas" id="ideas">
+         <h3>IDEAS</h3>
+         <p id="ideas-desc">The description of my (possible) future semestral project</p>
+
+         <p>
+            Me with my friend have a common friend. He had birthday in July, but we still didn't manage to create a present for him. My bestie (btw,
+            she is a psychologist, so she has to know for sure) recommended me to finish all of my beginnings... And that is why I decided to combine
+            necessary stuff with useful and create a gift for a friend during this semester.
+         </p>
+         <img src="images/2.png" />
+         <p>
+            We planned to do something similar to the picture. It's actually a simple tic-tac-toe game, just with a few our modifications (for
+            example, figures with ability to rotate their position, some pieces to lock figures and so on). Previously, we made a decision to create
+            this game from scratch, but there are a lot of things to do (create a 3D model of each figure and print them on a 3D printer, cut the
+            playing field with the laser, create a box to pack the whole game...). I don't have an experience with such stuff, so I believe that
+            during this semester I will be able to learn all of this and fulfill my plans.
+         </p>
+      </section>
+
+      <section class="contact" id="contact">
+         <h3>CONTACT</h3>
+         <div class="row">
+            <h5><i class="fa-brands fa-discord" id="con-icon"></i>Nastiona_gr#9714</h5>
+         </div>
+         <div class="row">
+            <h5><i class="fa-brands fa-github" id="con-icon"></i>Nastionagr</h5>
+         </div>
+         <div class="row">
+            <h5><i class="fa-solid fa-envelope-circle-check" id="con-icon"></i>hrytsana@fit.cvut.cz</h5>
+         </div>
+      </section>
+
+      <script>
+         var navLinks = document.getElementById("navLinks");
+
+         function showMenu() {
+            navLinks.style.right = "0";
+         }
+         function hideMenu() {
+            navLinks.style.right = "-200px";
+         }
+      </script>
+   </body>
+</html>

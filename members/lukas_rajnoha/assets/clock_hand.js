@@ -76,7 +76,7 @@ export class ClockHandMinutes extends ClockHand {
 export class ClockHandHours extends ClockHand {
     timeFunction() { 
         const today = new Date()
-        return today.getHours()
+        return today.getHours() / 12 * 60
     }
     constructor(p, starfield) { super(p, starfield, .3, 260); }
 }

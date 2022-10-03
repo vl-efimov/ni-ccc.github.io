@@ -146,6 +146,10 @@ footer {
     vertical-align: middle;
 }
 
+.outlined {
+    outline: 1px solid black;
+}
+
 
 /* intro page*/
 

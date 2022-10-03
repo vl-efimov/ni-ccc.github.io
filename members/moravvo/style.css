@@ -1,0 +1,31 @@
+body {
+   display: flex;
+   width: 100vw;
+   align-items: center;
+   justify-content: center;
+   font-family: Arial, sans-serif;
+   background: black;
+   color: white;
+}
+
+.content {
+   width: 500px;
+}
+
+.profile-img {
+   border-radius: 50%;
+   height: 60px;
+}
+
+.profile {
+   display: flex;
+   align-items: center;
+}
+
+h1 {
+   margin-right: 10px;
+}
+
+a {
+   color: white;
+}

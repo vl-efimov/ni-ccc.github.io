@@ -1,0 +1,9 @@
+export const STAR_COUNT = 600;
+export const STAR_SIZE = 4;
+export const HANDS_POINTS_DENSITY = 30;
+export const CONSTELLATION_COUNT = 10;
+export const CONSTELLATION_MIN_STAR_COUNT = 3;
+export const CONSTELLATION_MAX_STAR_COUNT = 7;
+export const CONSTELLATION_MAX_STAR_DISTANCE = 100;
+export const CONSTELLATION_MIN_STAR_DISTANCE = 20;
+export const UPDATE_STARS_PER_FRAME_COUNT = 1;

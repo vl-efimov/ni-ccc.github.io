@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="/img.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js" integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>NI-CCC</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;0,700;1,900&display=swap');
+
+        body {
+            background: #ffeeec;
+            width:100vw;
+            overflow-x:hidden;
+        }
+
+        * {
+            font-family: 'Jost', sans-serif;
+        }
+
+        h1 {
+            font-weight: 900;
+            font-style: italic;
+            color: #c5455b;
+        }
+
+        h2 {
+            font-weight: 700;
+            margin:1em 0 0.2em;
+        }
+
+        p {
+            font-weight: 500;
+            margin-top:0em;
+            color:#232323;
+        }
+
+        #main > *, header > *, #main-title > * {
+            margin-left: 10%;
+        }
+
+        a {
+            color:#232323;
+        }
+
+        .slide {
+            height:120vh;
+            overflow:hidden;
+            position:relative;
+            width:100vw;
+        }
+
+        .slide--constellations {            
+            background:black;
+        }
+        #constellations-container {
+            height: 120vh;
+            width: 100vw;
+            z-index:1;
+        }
+
+      
+
+        .slide--trees {
+            background-color:white;
+            background-image:url("./assets/stromceky.png") ;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            background-size: auto 90%;
+        }
+
+        .slide__description {
+            position:absolute;
+            margin-left:10vw;
+            margin-top:10vw;
+            max-width:30vw;
+            z-index:3;
+        }
+
+        .slide__background {
+            position:absolute;
+            z-index:2;
+            height:100%;
+            width:100%;
+        }
+
+        .slide__background {
+            position:absolute;
+            height:120vh;
+        }
+
+        .slide__background img {
+            position:absolute;
+            opacity:0;
+            transition:2.22s;
+            height:100%;
+        }
+
+        .slide__background img.active {
+            opacity:1;
+        }
+
+        .slide--lines .slide__description, .slide--constellations .slide__description {
+            color:white;
+            padding:1rem 2rem;
+            border-radius: 10px;
+            background-color:rgba(0,0,0, .15);
+            backdrop-filter:blur(5px);
+
+        }
+
+
+        .slide--lines .slide__description p, .slide--constellations .slide__description p {
+            color:#ffffffba;
+
+        }
+
+        .slide--lines2 {
+            background:black;
+        }
+
+        .slide--lines2 h2 {
+            color:white;
+        }
+
+        .slide--lines2 p {
+            color:#ffffffba;
+        }
+        .slide__gallery {
+            margin-top:50vh;
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            justify-content:space-evenly;
+            height: 60vh;
+        }
+
+        .shelf {
+            
+            width:30vw;
+            height:60vh;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        .shelf__images {
+            width:100%;
+            display:flex;
+            align-items: flex-start;
+            height:100%;
+            
+        }
+
+        .shelf__images img {
+            position:absolute;
+            opacity:0;
+            transition:2.22s;
+            max-width: 30vw;
+            border-radius: 10px;
+        }
+
+        .shelf__images img.active {
+            opacity:1;
+        }
+        
+
+    </style>
+</head>
+
+<body class="presentation">
+
+    <header>
+        <div class="slide">
+            <a href="./index.html">back to home</a>
+            <br>
+            <br>
+            <h2>GENERATIVE ART</h2>
+            <p>
+                Tu by som rad showcasol nejaky moj generative art. It's not much but it's honest work. Skusenost mam zvacsa s Processingom a p5js. Rad by som sa niekedy ale skusil pohrat aj na nejakym 3d generativnym dizajnom a renderingom (napr. Blender), a pripadne aj hudbou. Medzi moje najoblubenejsie umenie patri prave interaktivne, prist vsak s interaktivnym napadom je vacsinou pomerne tazke :/
+                <br>
+                <br>
+                <br>
+                scroll down
+                <br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            </p>
+        </div>
+    </header>
+
+    <div class="slide slide--lines">
+        <div class="slide__description">
+            <h2>ABSTRACT LINE ART</h2>
+            <p>
+                Tu som sa pohral s napadom generovat abstraktne pozadia s jednoduchymi rotujucimi ciarkami. Kazda ciarka je ovplyvnovana susediacimi ciarami. Napad som realizoval s Processingom vo forme animacie, z ktorej tu je vidiet par zaujimavych screenshotov.
+            </p>
+        </div>
+        <div class="slide__background" id="lines1-background">
+            <img src="./assets/lines1-1.png" alt="line art 1" class="active">
+            <img src="./assets/lines1-2.png" alt="line art 1">
+            <img src="./assets/lines1-3.png" alt="line art 1">
+            <img src="./assets/lines1-4.png" alt="line art 1">
+            <img src="./assets/lines1-5.png" alt="line art 1">
+            <img src="./assets/lines1-6.png" alt="line art 1">
+            <img src="./assets/lines1-7.png" alt="line art 1">
+            <img src="./assets/lines1-8.png" alt="line art 1">
+            <img src="./assets/lines1-9.png" alt="line art 1">
+            <img src="./assets/lines1-10.png" alt="line art 1">
+        </div>
+    </div>
+
+    <div class="slide slide--lines2" id="lines2">
+        <div class="slide__description">
+            <h2>ABSTRACT LINE ART N.2</h2>
+            <p>
+                Vramci jedneho z grafickych predmetov na mojom bakalarovi som sa snazil vyuzit generative art pri navrhu dizajnu produktov. Sice som generative art nakoniec nepouzil, v procese som dosiel k roznym zaujimavym vysledkom.
+            </p>
+        </div>
+        <div class="slide__gallery">
+            <div class="shelf">
+                <div class="shelf__images" id="shelf1">
+                    <img src="./assets/lines2-1-1.png" alt="line art 2" class="active">
+                    <img src="./assets/lines2-1-2.png" alt="line art 2">
+                    <img src="./assets/lines2-1-3.png" alt="line art 2">
+                </div>
+                <div class="shelf__description">
+
+                </div>
+            </div>
+
+            <div class="shelf">
+                <div class="shelf__images" id="shelf2">
+                    <img src="./assets/lines2-2-1.png" alt="line art 2" class="active">
+                    <img src="./assets/lines2-2-2.png" alt="line art 2">
+                    <img src="./assets/lines2-2-3.png" alt="line art 2">
+                </div>
+                <div class="shelf__description">
+                    
+                </div>
+            </div>
+
+            <div class="shelf">
+                <div class="shelf__images" id="shelf3">
+                    <img src="./assets/lines2-3-1.png" alt="line art 2" class="active">
+                    <img src="./assets/lines2-3-2.png" alt="line art 2">
+                    <img src="./assets/lines2-3-3.png" alt="line art 2">
+                </div>
+                <div class="shelf__description">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide slide--trees">
+        <div class="slide__description">
+            <h2>NEMAM NA TO NAZOV, proste STROMY</h2>
+            <p>
+                Tu som sa snazil vygenerovat stromy nakreslene rucne. Tento miniprojektik by chcel este trochu prace, agorithus pre konare nefunguje najlepsie a niekedy tieto konare pripominaju skor chapadla. Som celkom spokojny s vizualom stromovej kory, aj ked na vizualu listia by sa dalo zapracovat.
+            </p>
+        </div>
+    </div>
+
+    <div class="slide slide--constellations">
+        <div class="slide__description">
+            <h2>CONSTELLATIONS</h2>
+            <p>
+                Asi moje najoblubenejsie. Toto 'umenie' ma znazornovat analogove hodiny na hviezdnej oblohe. Hodinove rucicky su abstrakciou pre hviezdne konstelacie.
+            </p>
+        </div>
+        <div id="constellations-container">
+
+        </div>
+        <script src="./assets/constellations_main.js" type="module"></script>
+    </div>
+    
+   
+
+    <script>
+        const cycleThroughImages = (id, n, maxN, timeout) => {
+            const children = [...document.getElementById(id).children]
+            children.forEach((child) => {
+                child.classList = ''
+            }) 
+            children[n].classList = 'active'
+
+            n += 1
+            n %= maxN
+
+            setTimeout(cycleThroughImages, timeout, id, n, maxN, timeout)
+        }
+
+        cycleThroughImages('lines1-background', 1, 10, 7000)
+        setTimeout(
+            cycleThroughImages,
+            0,
+            'shelf1', 1, 3, 6000
+        )
+        setTimeout(
+            cycleThroughImages,
+            2000,
+            'shelf2', 1, 3, 6000
+        )
+        setTimeout(
+            cycleThroughImages,
+            4000,
+            'shelf3', 1, 3, 6000
+        )
+
+    </script>
+
+    <!--    DO NOT CHANGE STUFF BELLOW -->
+    </section>
+    <footer></footer>
+</body>
+
+</html>

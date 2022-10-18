@@ -100,15 +100,15 @@ header img {
 
 
 .imgs {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 0;
-    padding: 0;
     width: 100%;
 }
 
-.imgs img {
+#main .imgs img {
     flex: 1;
     margin: 1px 1px;
     object-fit: cover;

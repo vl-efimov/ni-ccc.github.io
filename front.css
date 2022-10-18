@@ -21,17 +21,30 @@ header h1 {
     font-size: 1rem;
 }
 
+header div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 header img {
     height: 2.5rem;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
 
 @media (max-width: 600px) {
     header {
         margin: 1rem;
     }
-
-    header img {
+    
+    header img:not(:first-child) {
        display: none;
+    }
+
+    header h1 {
+        font-size: 0.8rem;
     }
 }
 
@@ -189,7 +202,7 @@ a {
 
 #lectures li .date {
     color: #888;
-    font-size: 0.8em;
+    font-size: 0.7em;
     width: 5rem;
     display: inline-block;
 }

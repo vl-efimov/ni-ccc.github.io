@@ -3,7 +3,19 @@ html, body {
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
-    color: #333;
+    color: #FFF;
+    background: #000;
+}
+
+#main h1 {
+    margin-bottom: 0rem;
+}
+
+.tagline {
+    opacity: 0.8;
+    font-size: 0.8em;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 ul, ol {
@@ -21,17 +33,49 @@ p, ol, ul {
 }
 
 a {
-    color: #0000FF;
+    color: #FFF;
     text-decoration: none;
+    border-bottom: 1px solid #888;
 }
 
-a:hover {
-    color: #FF0000;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #888;
 }
 
-#main > *,
-header > *,
-#main-title > * {
+header a {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 1rem;
+}
+
+header img {
+    height: 2.5rem;
+}
+
+@media (max-width: 600px) {
+    header {
+        margin: 1rem;
+    }
+    
+    header img {
+       display: none;
+    }
+}
+
+
+
+
+#main {
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
@@ -39,19 +83,13 @@ header > *,
 }
 
 @media screen and (max-width:  40rem) {
-    #main > *,
-    header > *,
-    #main-title > * {
+    #main{
         margin-left: 1rem;
         margin-right: 1rem;
         width: calc(100% - 2rem);
     }
 
 }
-
-/*.date {
-    color: #888;
-}*/
 
 .imgs {
     display: flex;
@@ -71,32 +109,13 @@ header > *,
 }
 
 
-
-.img-frame {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(200, 200, 200, 0.7);
-    backdrop-filter: blur(2px);
-}
-
-.img-frame img {
-    max-width: calc(100% - 1em);
-    max-height: calc(100% - 4em);
-    margin: 1em auto;
-    display: block;
-    background: #FFF;
-}
-
 img {
-    cursor: pointer;
+    max-width: 100%;
 }
 
 .todo,
 .code {
-    background: #DDD;
+    background: #444;
     padding: 0.1em 0.5em;
 }
 
@@ -114,67 +133,3 @@ footer {
 }
 
 
-.mentor::before {
-    content: 'mentor projektu:';
-    display: inline-block;
-    padding-right: 0.5em;
-    color: #888;
-}
-
-.team-members:before {
-    content: 'autoři:';
-    display: inline-block;
-    padding-right: 0.5em;
-    color: #888;
-}
-
-.member {
-    list-style: none;
-    margin: 8px 0 8px 0;
-}
-
-.member a {
-    font-size: 18pt;
-    font-weight: bold;
-}
-
-.avatar {
-    width: 64px;
-    height: 64px;
-    margin-right: .5em;
-    border-radius: 100%;
-    vertical-align: middle;
-}
-
-.outlined {
-    outline: 1px solid black;
-}
-
-
-/* intro page*/
-
-h1 {
-    font-size: 2em;
-    font-weight: 900;
-}
-
-.logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    align-items: center;
-    width: 100%;
-}
-
-.logos > a {
-    display: block;
-    width: 7rem;
-    margin: 0.75rem;
-} 
-
-.logos > a img {
-    display: block;
-    width: 100%;
-    height: auto;
-}

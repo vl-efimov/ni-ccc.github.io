@@ -10,6 +10,19 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
 
     <style>
+        html, body {
+            background: none;
+            color: #000;
+        }
+
+        header h1 {
+            color: #000
+        }
+
+        header img {
+            filter: invert(1);
+        }
+
         .overlay, canvas {
             position: fixed;
             left: 0;
@@ -28,10 +41,12 @@
 </head>
 
 <body>
-
     <header>
+        <a href="/">
+            <h1>Creative Coding and Computational Art Course</h1>
+        </a>
         <div>
-            <a href="../">back to nic</a>
+            <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
         </div>
     </header>
     <section id="main">

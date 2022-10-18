@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <script src="img.js"></script>
+    <link rel="stylesheet" href="/page.css">
+    <script src="/img.js"></script>
     <title>NI-CCC</title>
 </head>
 
@@ -19,91 +19,61 @@
             <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
         </div>
     </header>
-<section id="main">
-    <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
-    <!--    here is place for your stuff, see examples bellow -->
+    <section id="main">
+        <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
+        <!--    here is place for your stuff, see examples bellow -->
 
 
-    <h1>VR ARCHITEKT</h1>
-    <p>Projekt předmětu NI-CCC v letním semestru 2020-2021</p>
-    <p>Autoři: Jan Šefčík, Čeněk Žid</p>
+        <h1>VR ARCHITEKT</h1>
+        <p class="tagline">Jan Šefčík, Čeněk Žid; projekt předmětu NI-CCC v letním semestru 2020-2021</p>
+        <p>Cíl je převést jeden z projektů architektů do VR.</p>
+        <img src="images/booklet1.png">
 
-    <h2>TEAM</h2>
-    <p>Já, Čeněk, kamarádka z Vídně a její tým</p>
+        <h2>Jak</h2>
+        <p>Za použití Blenderu, Unity a Vive Pro brýlí.</p>
+        <img src="images/nada.png">
 
-    <h2>KONTAKTY</h2>
-    <p>Jan Šefčík</p>
-            <ul>
-                <li>Email: sefcija4@cvut.cz</li>
-                <li>Discord: schEfa</li>
-            </ul>
-    <p>Čeněk Žid</p>
-            <ul>
-                <li>Email: zidcenek@cvut.cz</li>
-                <li>Discord: Lutail</li>
-            </ul>
+        <h2>Práce na projektu</h2>
+        <h3>Čištění 3D modelu</h3>
+        <p>
+            Další částí projektu bylo upravit celý prodel do nějakého "snesitelného" 3D modelu. Pracovní flow architektů je jiné, než
+            jaké jsme potřebovali do VRka. Model se skládal z velkého množství nehomogenních textur, origin celého 3D modelu byl posunutý
+            o několik kilometrů mimo celý model. Proto jsme nejdříve model pročistili o nepotřebné části, posunuli origin cca do středu
+            modelu a odmazali jsme veškeré úpravy země, které se v modelu nacházely (země se byla vytvořená z několika ploch, které
+            znázorňovaly to, jakým způsobem by úpravy terénu byly prováděny).
+        </p>
+        <h3>Úpravy v Blender</h3>
+        <p>
+            V další části jsme napsali <a href="src/nic_script_v2_texture.py">skript</a> v Blenderu (v2.9.12), který do modelu doplnil textury (obarvení) podle názvů jednotlivých 3D objektů v modelu.
+            Například objektům se jménem "holz" jsme nastavili dřevěnou barvu.
+        </p>
+        <p>
+            Protože se v modelu měly nacházet stromy, které však nebyly v modelu vyexportovány, napsali jsme <a href="src/nic_script_v2.py">skript</a>, který měl na jednotlivé
+            body doplnit model stromu. Těchto bodů bylo v modelu však tak velké množství, že se nám nepodařilo, z důvodu nedostatečného výpočetního výkonu,
+            umístit stromy na všechna místa, kde by se měly nacházet.
+        </p>
+        <img src="images/trees.png" caption="Neco">
+        <p>Náhodně přidělené barvy/materiály jednotlivým objektův ve scéně:</p>
+        <img src="images/random_colors.png">
+        <h3>VR v Unity</h3>
+        <p>
+            Již upravený model jsme nahrály do Unity (v2019.4.22f1), kde jsme s pomocí Steam VR pluginu spustily VR (Vive Pro). Zde jsme si museli
+            pohrát s možnostmi pohybu. Nakonec jsme zvolili způsob teleportace. Ve VRku je tedy možné se pohybovat po celé ploše podlahy,
+            plus v patrech jednotlivých budov. Do těchto pater je možné se dostat pomocí Teleporting Pointů, které se nacházejí na schodech.
+        </p>
 
-    <h2>CO</h2>
-    <p>Převést jeden z projektů architektů do VR.</p>
-    
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="images/booklet1.png" style="display:block; flex:1"><img src="images/booklet1.png" style="max-width:30em"></a>
-    </div>
-    
-    <h2>Jak</h2>
-    <p>Za použití Blenderu, Unity a Vive Pro brýlí.</p>
-    
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="images/nada.png" style="display:block; flex:1"><img src="images/nada.png" style="max-width:30em"></a>
-    </div>
-    
-    <h2>Práce na projektu</h2>
-    <h3>Čištění 3D modelu</h3>
-    <p>
-        Další částí projektu bylo upravit celý prodel do nějakého "snesitelného" 3D modelu. Pracovní flow architektů je jiné, než 
-        jaké jsme potřebovali do VRka. Model se skládal z velkého množství nehomogenních textur, origin celého 3D modelu byl posunutý 
-        o několik kilometrů mimo celý model. Proto jsme nejdříve model pročistili o nepotřebné části, posunuli origin cca do středu 
-        modelu a odmazali jsme veškeré úpravy země, které se v modelu nacházely (země se byla vytvořená z několika ploch, které
-        znázorňovaly to, jakým způsobem by úpravy terénu byly prováděny).
-    </p>
-    <h3>Úpravy v Blender</h3>
-    <p>
-        V další části jsme napsali <a href="src/nic_script_v2_texture.py">skript</a> v Blenderu (v2.9.12), který do modelu doplnil textury (obarvení) podle názvů jednotlivých 3D objektů v modelu. 
-        Například objektům se jménem "holz" jsme nastavili dřevěnou barvu.
-    </p>
-    <p>
-        Protože se v modelu měly nacházet stromy, které však nebyly v modelu vyexportovány, napsali jsme <a href="src/nic_script_v2.py">skript</a>, který měl na jednotlivé
-        body doplnit model stromu. Těchto bodů bylo v modelu však tak velké množství, že se nám nepodařilo, z důvodu nedostatečného výpočetního výkonu,
-        umístit stromy na všechna místa, kde by se měly nacházet.
-    </p>
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="images/trees.png" style="display:block; flex:1"><img src="images/trees.png" style="max-width:30em" caption="Neco"></a>
-    </div>
-    <p>Náhodně přidělené barvy/materiály jednotlivým objektův ve scéně:</p>
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="images/random_colors.png" style="display:block; flex:1"><img src="images/random_colors.png" style="max-width:30em"></a>
-    </div>
-    <h3>VR v Unity</h3>
-    <p>
-        Již upravený model jsme nahrály do Unity (v2019.4.22f1), kde jsme s pomocí Steam VR pluginu spustily VR (Vive Pro). Zde jsme si museli
-        pohrát s možnostmi pohybu. Nakonec jsme zvolili způsob teleportace. Ve VRku je tedy možné se pohybovat po celé ploše podlahy,
-        plus v patrech jednotlivých budov. Do těchto pater je možné se dostat pomocí Teleporting Pointů, které se nacházejí na schodech.
-    </p>
-    
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="images/example.png" style="display:block; flex:1"><img src="images/example.png" style="max-width:30em"></a>
-    </div>
-    
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap;width:30em;">
-    <video width="480px" controls>	
-	  	<source src="ukazka.mov" type="video/mp4">
-			Your browser does not support the video tag.
-	</video>
-	</div>
+        <img src="images/example.png">
+            <video width="480px" controls>
+                <source src="ukazka.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-    <!--    DO NOT CHANGE STUFF BELLOW -->
-</section>
-<footer></footer>
+        <!--    DO NOT CHANGE STUFF BELLOW -->
+    </section>
+    <script>
+        makeImgsClickable();
+    </script>
+    <footer></footer>
 </body>
 
 </html>

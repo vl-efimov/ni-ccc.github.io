@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <script src="img.js"></script>
+    <link rel="stylesheet" href="/page.css">
+    <script src="/img.js"></script>
     <title>NI-CCC</title>
 </head>
 
@@ -54,17 +54,23 @@
     <p>Uvažovalo se nad nějakou podobou interakce, například nahrávání zvuků uživateli aplikace</p>
 
     <h2>Screenshoty</h2>
-    <div style="display:flex;flex-direction:row;flex-wrap: wrap">
-        <a href="zvukyPrahy1.jpg" style="display:block; flex:1"><img src="zvukyPrahy1.jpg" style="max-width:20em"></a>
-        <a href="zvukyPrahy2.jpg" style="display:block; flex:1"><img src="zvukyPrahy2.jpg" style="max-width:20em"></a>
-        <a href="zvukyPrahy3.jpg" style="display:block; flex:1"><img src="zvukyPrahy3.jpg" style="max-width:20em"></a>
-        <a href="zvukyPrahy4.jpg" style="display:block; flex:1"><img src="zvukyPrahy4.jpg" style="max-width:20em"></a>
-        <a href="zvukyPrahy5.jpg" style="display:block; flex:1"><img src="zvukyPrahy5.jpg" style="max-width:20em"></a>
+    <div class="imgs">
+        <img src="zvukyPrahy1.jpg">
+        <img src="zvukyPrahy2.jpg">
+    </div>
+    <div class="imgs">
+        <img src="zvukyPrahy3.jpg">
+        <img src="zvukyPrahy4.jpg">
+        <img src="zvukyPrahy5.jpg">
     </div>
 
     <!--    DO NOT CHANGE STUFF BELLOW -->
 </section>
-<footer></footer>
+<footer>
+    <script>
+        makeImgsClickable();
+    </script>
+</footer>
 </body>
 
 </html>

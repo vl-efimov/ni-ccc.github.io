@@ -1,6 +1,4 @@
-function setImgs() {
-
-
+function makeImgsClickable() {
     let imgs = document.getElementsByTagName("img");
 
     for(let i of imgs) {
@@ -20,6 +18,6 @@ function setImgs() {
             frame.appendChild(image);
             s.appendChild(frame);
         }
+        i.classList.add("clickable");
     }
-
 };

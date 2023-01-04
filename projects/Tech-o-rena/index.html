@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/page.css" />
+    <script src="/img.js"></script>
+    <title>NI-CCC</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">
+          <h1>Creative Coding and Computational Art Course</h1>
+      </a>
+      <div>
+          <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
+      </div>
+  </header>
+    <section id="main">
+      <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
+      <!--    here is place for your stuff, see examples bellow -->
+
+      <style>
+        .galery{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .galery img {
+            margin-bottom: 1rem;
+        }
+    </style>
+
+      <div>
+        <video width="100%"autoplay loop muted>
+            <source src="video.mp4" type="video/mp4" />
+        </video>  
+    </div>
+
+      <h1>Tech-o-rena</h1>
+      <p class="tagline">Marek Trzaskalik; projekt předmětu NI-CCC v zimním semestru 2021-2022</p>
+
+      <h2>Game Design</h2>
+      <p>Jedná se o akční hru s důrazem na audio, do virtuální reality. Hráč se nachází veprostřed arény a jeho cílem je ničit útočící roboty ze všech stran. 
+      Hra je rozdělená do levelů, kde každý level má několik vln. Podle comba a ztráty životů je vyhodnoceno hráčovo skóre za level, které pak slouží k nákupu před dalším levelem.
+      Postupně se otevírá více dvěří, odkud se noří nepřátelé a přidává se na rychlosti.</p>
+
+      <h2>Environment design</h2>
+      <p>Hra se odehrává v podzemní staré aréně. Pravděpodobně v chudší části města z blízké budoucnosti, kde se spodina společnosti baví nad zápasem o přežití.
+        Cílem je navodit pocit jako z bláznivého rave techno koncertu. Tomu napomáha jak techno hudba, tak reflektory, neony a celková temná underground atmosféra se zeleno-tyrkysovým nádechem.</p>
+
+        <div class="galery">
+          <img src="/HighresScreenshot00001.png" alt="">
+          <img src="/HighresScreenshot00002.png" alt="">
+          <img src="/HighresScreenshot00003.png" alt="">
+        </div>
+
+      <h2>Kit bash</h2>
+      <p>Cílem při vytváření projektu bylo si zkusit reálnou produkci větších her. Proto všechny assety byly připravovány tak, aby se daly znova použít, ikdyž to v tomto případě není třeba.
+        Aréna je skládána z modulárních kusů zdí. Každý kus má daný pevný rozměr na přesné skládání vedle sebe. 
+      </p>
+
+      <img src="/HighresScreenshot00004.png" alt="">
+
+      <h2>Technické info</h2>
+      <p>Hra je vytvářena v Unrealu 5. Vychází z templatu pro virtuální realitu.</p>
+      <ul>
+        <li>
+          <div>
+            <h3>Modely</h3>
+            <p>Modely jsou vlastní (pouze jeden nepodstatný stažený z Megascans).</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Materiály</h3>
+            <p>Materiály jsou z Megascans od Quixel. Tyto materiály jsou poté upravovány a předělávány podle potřeb.</p>
+            <div class="galery">
+              <img src="/Material1.png" alt="">
+              <img src="/Material2.png" alt="">
+            </div>
+          </div>
+        </li>
+          <li>
+          <div>
+            <h3>Blueprinty</h3>
+            <p>K programování jsou použity blueprinty.</p>
+            <img src="/SplineMesh.png" alt="">
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Audio</h3>
+            <p>Audio je pod free licencí stažené z internetu.</p>
+          </div>
+        </li>
+      </ul>
+
+      <h2>ShowReel</h2>
+      <div>
+        <video width="100%" controls>
+            <source src="video.mp4" type="video/mp4" />
+        </video>  
+    </div>
+
+      <h2>Whiteboxes</h2>
+      <p>V designové fázy byl na návrh prostředí použit Blender.</p>
+      <div class="galery">
+        <img src="/WhiteBox1.png" alt="">
+        <img src="/WhiteBox2.png" alt="">
+      </div>
+
+      <h2>WIP</h2>
+      <div class="galery">
+        <img src="/WIP1.png" alt="">
+        <img src="/WIP2.png" alt="">
+        <img src="/HighresScreenshot00001.png" alt="">
+      </div>
+
+    <h2>Poznámka</h2>
+    <p>Hra je stále ve fázi vývoje a zatím bohužel nehratelná. Je navrženo pouze prostředí, menší iterace a game design.</p>
+
+      <!--    DO NOT CHANGE STUFF BELLOW -->
+    </section>
+    <footer></footer>
+  </body>
+</html>

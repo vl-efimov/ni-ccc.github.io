@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/page.css">
+    <script src="/img.js"></script>
+    <title>NI-CCC</title>
+    <style>
+        #main { position: relative; }
+        .hornet-leaf {
+            position: fixed;
+            top: 0;
+            width: 20px;
+            max-width: 60px;
+            pointer-events: none;
+            animation: hornet-fall 20s linear infinite;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+            z-index: 50;
+        }
+        @keyframes hornet-fall {
+            0%      { transform: translate(0, -160px) rotate(15deg); opacity: 0; }
+            5%  { transform: translate(40px, -5vh) rotate(-12deg); opacity: 1; }
+            10%     { transform: translate(-18px, 12vh) rotate(18deg); }
+            15% { transform: translate(55px, 24vh) rotate(-14deg); }
+            20% { transform: translate(-20px, 36vh) rotate(16deg); }
+            30%     { transform: translate(60px, 48vh) rotate(-12deg); }
+            40% { transform: translate(-20px, 60vh) rotate(14deg); }
+            50% { transform: translate(48px, 72vh) rotate(-11deg); }
+            60%     { transform: translate(-18px, 84vh) rotate(10deg); }
+            70% { transform: translate(35px, 95vh) rotate(-8deg); }
+            75% { transform: translate(-10px, 105vh) rotate(5deg); opacity: 1; }
+            80% { transform: translate(0, 112vh) rotate(0deg); opacity: 0; }
+            100%    { transform: translate(0, 112vh) rotate(0deg); opacity: 0; }
+        }
+        @media (max-width: 800px) { .hornet-leaf { display:none; } }
+        body { overflow-x:hidden; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <h1>Creative Coding and Computational Art Course</h1>
+        </a>
+        <div>
+            <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
+        </div>
+    </header>
+    <section id="main">
+    <h1>NullPageGh0st</h1>
+    <p>Jsem náplava z jaderky, která momentálně studuje magisterský obor Počítačová bezpečnost.
+         Na jaderku jsem přišla z obchodní akademie a zažívala jsem tak dlouhou dobu krušné časy
+        s matematikou a fyzikou. Stejně random jako je můj výběr škol jsou i mé zájmy:</p>
+    <ul>
+        <li>Hraní</li>
+        <li>Opravování nefunkčních myšek a klávesnic</li>
+        <li>Flipper zero</li>
+        <li>Kreslení</li>
+        <li>Háčkování</li>
+        <li>+ Jsem veliký Silksong enjoyer</li>
+    </ul>
+
+    <h2>Nápady</h2>
+    <p>Jelikož můj side gig je prodávání obrázků a háčkovaných plyšáků na festivalech, chtěla bych se věnovat
+         projektu, který mi trochu ulehčí život. Jelikož si nejsem schopná spolehlivě vést "sklad" abych měla
+          přehled co se jak kde prodalo. Chtěla bych si navrhnout nějakou smol aplikaci, která se společně s
+           mobilem nebo čtečkou čárových/qr kódů o tohle postará za mě. Kromě evidence bych chtěla, aby bylo
+            možné prodeje interpetovat podle různých kritérií a zjišťovat tak spojitosti s prodejem různého
+             zboží na různých festivalech.</p>
+    <p>Myslím, že bych něco takového ocenila jak já tak i moji kolegové z artist alley.
+         Je dost možné, že něco takového už existuje a pravděpodobně mají i propojení s
+          terminálem a další cool věcičky, ale občas mám v oblibě vynalézt znovu kolo,
+           i když vím že bude celkem hranaté.</p>
+
+    <h2>Kontakt:</h2>
+
+    <p>VEdWMGN5QmtZVzVqWlN3Z2MyaGhiR3dnZDJVL0lFaHZjR1VzSUhsdmRTQnNhV
+        3RsSUhOaGJITmhMaUJOWldWMElHMWxJR0YwSUhSb1pTQjNhR2wwWlNCaWIyRnlaQzQ9</p>
+    <p style="color:black">99 3b e0 e7 0f 97 76 d3 15 22 d2 d0 db 92 ab d0</p>
+    
+    <img src="hornet.png" alt="Hornet" class="hornet-leaf" loading="lazy">
+    </section>
+    <script>
+        makeImgsClickable();
+        (function(){
+            const el=document.querySelector('.hornet-leaf');
+            if(!el) return;
+            const POS=[75,85,93];
+            const LEFT=20, RIGHT=60;
+            let slots=[];
+            function compute(){
+                const vw=window.innerWidth;
+                const ew=el.offsetWidth||20;
+                const minBase=LEFT;
+                const maxBase=vw-RIGHT-ew;
+                slots=POS.map(p=>{
+                    const raw=(p/100)*vw;
+                    return Math.max(minBase, Math.min(maxBase, raw));
+                });
+            }
+            function place(){
+                if(!slots.length) compute();
+                el.style.left=slots[Math.floor(Math.random()*slots.length)]+'px';
+            }
+            el.addEventListener('animationiteration',place);
+            window.addEventListener('resize',()=>{slots=[];compute();place();});
+            window.addEventListener('load',()=>{compute();place();});
+        })();
+    </script>
+</body>
+
+</html>

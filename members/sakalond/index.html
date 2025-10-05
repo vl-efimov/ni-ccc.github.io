@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/page.css">
+    <script src="/img.js"></script>
+    <title>NI-CCC</title>
+    <style>
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .image-row figure {
+            flex: 1;
+            margin: 0;
+        }
+
+        .image-row figcaption {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 0.5em;
+        }
+
+        .interests-container {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .interest-category {
+            flex: 1;
+        }
+
+        .interest-category h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            font-weight: normal;
+            color: #ccc;
+        }
+
+        .interests-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .interests-list li {
+            background-color: #222;
+            color: #ddd;
+            padding: 0.4rem 0.9rem;
+            border-radius: 5px;
+            font-size: 0.9em;
+            border: 1px solid #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/">
+            <h1>Creative Coding and Computational Art Course</h1>
+        </a>
+        <div>
+            <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
+        </div>
+    </header>
+    <section id="main">
+        <h1>Ondřej Sakala</h1>
+        <p> Ahoj, jmenuju se Ondřej. Na FITu jsem v rámci bakaláře vystudoval počítačovou grafiku. Na magistru jsem se přesunul k umělé inteligenci (ZI), které jsem se však částečně věnoval už na bakaláři. </p>
+        <h2>Co mě baví / zajímá</h2>
+        <div class="interests-container">
+            <div class="interest-category">
+                <h3>Související s IT</h3>
+                <ul class="interests-list">
+                    <li>Počítače a další technika</li>
+                    <li>Videohry (a jejich vývoj)</li>
+                    <li>Generativní AI</li>
+                    <li>Virtuální realita</li>
+                    <li>3D tisk</li>
+                    <li>Python</li>
+                    <li>Blender</li>
+                </ul>
+            </div>
+            <div class="interest-category">
+                <h3>Zbytek</h3>
+                <ul class="interests-list">
+                    <li>Architektura a urbanismus</li>
+                    <li>Některé oblasti z fyziky a astronomie</li>
+                    <li>Příroda a turistika</li>
+                    <li>Elektronická hudba a rap</li>
+                    <li>Sci-fi</li>
+                </ul>
+            </div>
+        </div>
+        <h2>Nápad(y)</h2>
+        <p>Mým prvním a zatím jediným nápadem je implementace interaktivního promítání na budovy, které by využívalo generativní umělou inteligenci. Kdokoliv z veřejnosti by u takového promítání mohl zadat textový vstup, podle kterého by byla budova po pár sekundách stylizována prostřednictvím promítačky.
+        </p>
+        <p>Při implementaci mohu těžit ze zkušeností z mé <a href="https://github.com/sakalond/StableGen" target="_blank">bakalářské práce</a>, což mi usnadní vývoj.</p>
+        <h3>Detaily k implementaci</h3>
+        <p>K zhotovení by víceméně stačilo mít fotoaparát, počítač a projektor.</p><p></p>Nejprve se vyfotí fotka. Ta se následně pomocí technologií jako je např. <a href="https://pytorch.org/hub/intelisl_midas_v2/" target="_blank">MiDaS</a> převede na hloubkovou mapu. S pomocí této hloubkové mapy a textového popisku se vygeneruje obrázek, který se nášledně promítne na budovu. Pro samotné generování je možné využít například <a href="https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0" target="_blank">Stable Diffusion</a> s rozšířením <a href="https://arxiv.org/pdf/2302.05543" target="_blank">ControlNet</a>.</p>
+        <p>Z praktických důvodů by bylo taktéž vhodné implementovat LLM jako mezivrstu pro uživatelský vstup. LLM by pak přepisovalo přirozený text v čestině či jakýkoliv jinak nevhodný vstup do vhodného formátu pro generativní AI. </p>
+        <p>Další výzvou by byl upscaling rozlišení na vhodné pro velkoformátovou projekci a také případná transformace obrázků tak, aby následná projekce přesně lícovala s budovou.</p>
+        <p>V případě přebytečného času by možná šlo i výsledek nějak rozpohybovat či nějak jinak ozvláštnit, ale to zatím neplánuji.</p>
+        <p>Výhodou takové implementace by pak byla možnost ji využít jednoduše na více různých budovách, jelikož by celý proces byl víceméně automatický.</p>
+        <h3>Proof of concept</h3>
+        <p>Níže je ukázka, jak by mohl vypadat výsledek pro budovu FA a FIT ČVUT.</p>
+        <div class="image-row">
+            <figure>
+                <img src="school_source.jpg" alt="Původní fotografie budovy FIT ČVUT">
+                <figcaption>Původní fotografie</figcaption>
+            </figure>
+            <figure>
+                <img src="school_depth.png" alt="Hloubková mapa budovy FIT ČVUT">
+                <figcaption>Vygenerovaná hloubková mapa</figcaption>
+            </figure>
+        </div>
+        <h4>Obrázky vygenerované pomocí různých promptů</h4>
+        <div class="image-row">
+            <figure>
+                <img src="school_depth_cyberpunk.png" alt="Vygenerovaný obrázek budovy ve stylu cyberpunku">
+            </figure>
+            <figure>
+                <img src="school_depth_castle.png" alt="Vygenerovaný obrázek budovy ve stylu fantasy">
+            </figure>
+            <figure>
+                <img src="school_depth_drawing.png" alt="Vygenerovaný obrázek budovy jako potemnělá malba">
+            </figure>
+        </div>
+        <div class="image-row">
+            <figcaption>Prompt: "cyberpunk building, gloomy, night, rain, red"</figcaption>
+            <figcaption>Prompt: "historical building, medieval castle"</figcaption>
+            <figcaption>Prompt: "large building, drawing, gloomy"</figcaption>
+        </div>
+        <h2>Kontakt</h2>
+        <p>Email: <a href="mailto:sakalaondrej@gmail.com">sakalaondrej@gmail.com</a></p>
+    </section>
+    <script>
+        makeImgsClickable();
+    </script>
+</body>
+
+</html>

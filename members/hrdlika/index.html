@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/page.css">
+    <script src="/img.js"></script>
+    <title>NI-CCC</title>
+    <style>
+        #main { position: relative; }
+        .hornet-leaf {
+            position: fixed;
+            top: 0;
+            width: 20px;
+            max-width: 60px;
+            pointer-events: none;
+            animation: hornet-fall 20s linear infinite;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+            z-index: 50;
+        }
+        @keyframes hornet-fall {
+            0%      { transform: translate(0, -160px) rotate(15deg); opacity: 0; }
+            5%  { transform: translate(40px, -5vh) rotate(-12deg); opacity: 1; }
+            10%     { transform: translate(-18px, 12vh) rotate(18deg); }
+            15% { transform: translate(55px, 24vh) rotate(-14deg); }
+            20% { transform: translate(-20px, 36vh) rotate(16deg); }
+            30%     { transform: translate(60px, 48vh) rotate(-12deg); }
+            40% { transform: translate(-20px, 60vh) rotate(14deg); }
+            50% { transform: translate(48px, 72vh) rotate(-11deg); }
+            60%     { transform: translate(-18px, 84vh) rotate(10deg); }
+            70% { transform: translate(35px, 95vh) rotate(-8deg); }
+            75% { transform: translate(-10px, 105vh) rotate(5deg); opacity: 1; }
+            80% { transform: translate(0, 112vh) rotate(0deg); opacity: 0; }
+            100%    { transform: translate(0, 112vh) rotate(0deg); opacity: 0; }
+        }
+        @media (max-width: 800px) { .hornet-leaf { display:none; } }
+        body { overflow-x:hidden; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <h1>Creative Coding and Computational Art Course</h1>
+        </a>
+        <div>
+            <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
+        </div>
+    </header>
+    <section id="main">
+    <h1>Kateřina Hrdličková</h1>
+    <p>Studovala jsem střední průmyslovou školu elektrotechnickou v úžlabině obor technické liceum - průmyslový design a poté bakaláře na fitu obor počítačová grafika.</p> 
+     <p>Moje koníčky jsou: lezení - hlavně indoor ale ráda lezu i venku, čtení, kreslení, psaní (fantasy, rozhodně ne bakalářka nebo dokumentace :)), hraní her - deskových i počítačových,
+      chození venku - se psem, nebo na zajímavá místa jako hrady, zámky nebo pěkná příroda. Často mě něco zaujme, ale nemám na to čas a přestanu se tomu věnovat.</p>
+      
+    <h2>S čím již umím a baví mě to</h2>
+    <ul>
+        <li>Blender</li>
+        <li>C++</li>
+        <li>Photoshop nebo Gimp</li>
+        <li>Fusion (a další produkty od Autodesku)</li>
+        <li>3D tiskárna (jednu mám doma)</li>
+        <li>tužka a papír, nebo libovolné 3D modelování</li>
+    </ul>
+
+    <h2>Nápady</h2>
+    <p>Ráda bych si někdy zkusila naprogramovat hru od začátku v C++, abych věděla, jak tyhle věci fungují (a pravděpodobně poté spokojeně přešla na nějaký fungující engine, do čehož se mi momentálně moc nechce)
+    Něco podobného pravděpodobně budu dělat i v předmětu VGA tenhle semestr. Mým cílem je udělat nějaký "knihovny" pro grafiku, zvuk, ovládání apod včetně toho naučit se jak efektivně 
+      (bez nutnosti každý frame dělat raytracing) udělat pěkné stíny, jak počítat kolize, jak řešit zobrazování vzdálenějších objektů, jak řešit třeba fyziku, střelbu a takové věci. 
+      Mám k tomu tak trochu dva důvody, za a jsem trochu líná se učit v nějakém engine a tak trochu tuším, že občas v něm člověk neumí udělat to, co přesně by chtěl, a za b mě zajímá, jak engine fungují 
+    a ráda při programování zkouším začít od nuly, v c++ (ale často použiju raději python kde je spousta věcí jednodušší, ale pak nevím, jak přesně to funguje a je pro mě těžší to použít správně).</p>
+    <p>Další nápad je dělat něco na diplomku - tam dělám hledání cesty ve 3D prostoru pro skupinu dronů, tak buď s tím nějak pohnout, 
+      nebo třeba udělat nějaký návrh pro pohyb dronů a změnu barvy na vytváření nějaké choreografie.</p>
+      <p>V podstatě nevím, co přesně bych ráda dělala, takže klidně zvážím jakýkoliv jiný nápad.</p>
+    
+    <img src="hornet.png" alt="Hornet" class="hornet-leaf" loading="lazy">
+    </section>
+    <script>
+        makeImgsClickable();
+        (function(){
+            const el=document.querySelector('.hornet-leaf');
+            if(!el) return;
+            const POS=[75,85,93];
+            const LEFT=20, RIGHT=60;
+            let slots=[];
+            function compute(){
+                const vw=window.innerWidth;
+                const ew=el.offsetWidth||20;
+                const minBase=LEFT;
+                const maxBase=vw-RIGHT-ew;
+                slots=POS.map(p=>{
+                    const raw=(p/100)*vw;
+                    return Math.max(minBase, Math.min(maxBase, raw));
+                });
+            }
+            function place(){
+                if(!slots.length) compute();
+                el.style.left=slots[Math.floor(Math.random()*slots.length)]+'px';
+            }
+            el.addEventListener('animationiteration',place);
+            window.addEventListener('resize',()=>{slots=[];compute();place();});
+            window.addEventListener('load',()=>{compute();place();});
+        })();
+    </script>
+</body>
+
+</html>

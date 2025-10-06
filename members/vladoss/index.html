@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NI-CCC | Vladyslav Oleniuk</title>
+    <style>
+        :root {
+            --bg: #000;
+            --surface: #0a0a0a;
+            --card: #141414;
+            --border: #1f1f1f;
+            --text: #e0e0e0;
+            --muted: #7a7a7a;
+            --accent: #00bcd4;
+            --radius: 14px;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.2s ease;
+        }
+
+        header a:hover {
+            color: var(--accent);
+        }
+
+        header img {
+            height: 46px;
+            filter: brightness(0.9);
+        }
+
+        section#main {
+            max-width: 880px;
+            margin: 60px auto;
+            padding: 0 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile {
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            padding: 32px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #111, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 26px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 25px rgba(0, 188, 212, 0.25);
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 6px;
+        }
+
+        .header p {
+            margin: 8px 0 0 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .project {
+            margin-top: 26px;
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .project:hover {
+            border-color: var(--accent);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .github {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 10px 16px;
+            margin-top: 14px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .github:hover {
+            background: rgba(0, 188, 212, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .github svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contacts {
+            margin-top: 30px;
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .contacts:hover {
+            border-color: var(--accent);
+        }
+
+        .contacts h3 {
+            margin-top: 0;
+        }
+
+        .contact-item {
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+
+        .contact-item span {
+            color: var(--text);
+        }
+
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                margin-bottom: 8px;
+            }
+
+            section#main {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="/">
+        <h1>Creative Coding and Computational Art Course</h1>
+    </a>
+    <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
+</header>
+
+<section id="main">
+    <div class="profile">
+        <div class="header">
+            <div class="avatar">VO</div>
+            <div>
+                <div class="name">Vladyslav Oleniuk</div>
+                <h2>💻  My specialization: Web and microservices</h2>
+                <p>I am the one who cannot be seen, but my work is everywhere. I am a <span class="highlight">backend developer</span>.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>🌐 Projects and experience</h3>
+            <h4>Minecraft server</h4>
+            <p>For the past two years, I’ve been building a <span class="highlight">reliable, scalable, and secure backend</span> for a Minecraft server. Even though I haven’t played the game itself, I’m responsible for everything behind the scenes — handling donations, storing user data, and managing player resources.</p>
+        </div>
+
+        <div class="project">
+            <h4>🎓 Bachelor's thesis „Orion“</h4>
+            <p>
+                <span class="highlight">Discovery service</span> is a tool that helps different parts of a system (like microservices) find and communicate with each other automatically, without needing to know each other’s exact addresses.
+                This work aimed to analyze its current state and explore ways to improve its overall efficiency.
+            </p>
+            <p style="margin-top: 8px;">
+                🔗 <a href="https://tiltrikt.github.io/" target="_blank" style="text-decoration: none; color: #0078ff;">
+                More details →
+            </a>
+            </p>
+        </div>
+
+        <div class="project">
+            <h4>💡 My ideas</h4>
+            <p>
+            I want to create a <b>Telegram bot</b> that will automatically <span class="highlight">scan new listings on Bazoš</span>
+            and immediately notify the user if a product they are looking for appears.
+            The bot would help users be <b>the first</b> to know about new items, increasing their chances to act quickly.
+        </p>
+
+        </div>
+
+        <div class="contacts">
+            <h3>📫 Contacts</h3>
+            <div class="contact-item">💬 <b>Discord:</b> <span>vladoss339#5753</span></div>
+<!--            <div class="contact-item">📧 <b>Email:</b> <span></span></div>-->
+        </div>
+
+        <div class="project">
+            <h3>🔗 You can find my projects here:</h3>
+            <a class="github" href="https://github.com/Tiltrikt" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.3-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1 1.8 2.6 1.3 3.2 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.6-1.4-5.6-6.4 0-1.4.5-2.5 1.3-3.4-.1-.3-.6-1.6.1-3.3 0 0 1.1-.4 3.6 1.3a12.3 12.3 0 016.6 0c2.5-1.7 3.6-1.3 3.6-1.3.7 1.7.2 3 .1 3.3.8.9 1.3 2 1.3 3.4 0 5-2.9 6.1-5.6 6.4.4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0012 .5z"
+                          fill="currentColor"/>
+                </svg>
+                <span>Tiltrikt · GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

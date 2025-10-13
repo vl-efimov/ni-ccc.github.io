@@ -7,36 +7,6 @@
     <link rel="stylesheet" href="/page.css">
     <script src="/img.js"></script>
     <title>NI-CCC</title>
-    <style>
-        #main { position: relative; }
-        .hornet-leaf {
-            position: fixed;
-            top: 0;
-            width: 20px;
-            max-width: 60px;
-            pointer-events: none;
-            animation: hornet-fall 20s linear infinite;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
-            z-index: 50;
-        }
-        @keyframes hornet-fall {
-            0%      { transform: translate(0, -160px) rotate(15deg); opacity: 0; }
-            5%  { transform: translate(40px, -5vh) rotate(-12deg); opacity: 1; }
-            10%     { transform: translate(-18px, 12vh) rotate(18deg); }
-            15% { transform: translate(55px, 24vh) rotate(-14deg); }
-            20% { transform: translate(-20px, 36vh) rotate(16deg); }
-            30%     { transform: translate(60px, 48vh) rotate(-12deg); }
-            40% { transform: translate(-20px, 60vh) rotate(14deg); }
-            50% { transform: translate(48px, 72vh) rotate(-11deg); }
-            60%     { transform: translate(-18px, 84vh) rotate(10deg); }
-            70% { transform: translate(35px, 95vh) rotate(-8deg); }
-            75% { transform: translate(-10px, 105vh) rotate(5deg); opacity: 1; }
-            80% { transform: translate(0, 112vh) rotate(0deg); opacity: 0; }
-            100%    { transform: translate(0, 112vh) rotate(0deg); opacity: 0; }
-        }
-        @media (max-width: 800px) { .hornet-leaf { display:none; } }
-        body { overflow-x:hidden; }
-    </style>
 </head>
 
 <body>
@@ -73,36 +43,7 @@
     <p>Další nápad je dělat něco na diplomku - tam dělám hledání cesty ve 3D prostoru pro skupinu dronů, tak buď s tím nějak pohnout, 
       nebo třeba udělat nějaký návrh pro pohyb dronů a změnu barvy na vytváření nějaké choreografie.</p>
       <p>V podstatě nevím, co přesně bych ráda dělala, takže klidně zvážím jakýkoliv jiný nápad.</p>
-    
-    <img src="hornet.png" alt="Hornet" class="hornet-leaf" loading="lazy">
     </section>
-    <script>
-        makeImgsClickable();
-        (function(){
-            const el=document.querySelector('.hornet-leaf');
-            if(!el) return;
-            const POS=[75,85,93];
-            const LEFT=20, RIGHT=60;
-            let slots=[];
-            function compute(){
-                const vw=window.innerWidth;
-                const ew=el.offsetWidth||20;
-                const minBase=LEFT;
-                const maxBase=vw-RIGHT-ew;
-                slots=POS.map(p=>{
-                    const raw=(p/100)*vw;
-                    return Math.max(minBase, Math.min(maxBase, raw));
-                });
-            }
-            function place(){
-                if(!slots.length) compute();
-                el.style.left=slots[Math.floor(Math.random()*slots.length)]+'px';
-            }
-            el.addEventListener('animationiteration',place);
-            window.addEventListener('resize',()=>{slots=[];compute();place();});
-            window.addEventListener('load',()=>{compute();place();});
-        })();
-    </script>
 </body>
 
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/page.css">
+    <!-- <link rel="stylesheet" href="../../page.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="/img.js"></script>
+    <script>
+        const end = Date.now() + 3 * 1000;
+
+        // KTBFFH
+        const colors = ["#034694", "#034694", "#ffffff"];
+
+        (function frame() {
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors,
+            });
+
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors,
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    </script>
+    <title>NI-CCC</title>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <h1>Creative Coding and Computational Art Course</h1>
+        </a>
+        <div>
+            <img src="/logo/logo_nic.png" alt="Logo NI-CCC">
+        </div>
+    </header>
+    <section id="main">
+        <!--    DO NOT CHANGE STUFF ABOVE IF YOU DONT KNOW WHAT YOU ARE DOING -->
+        <!--    here is place for your stuff, see examples bellow -->
+
+        <h1>Vojtěch Plocica</h1>
+        <p class="tagline">I like crafting seamless experiences.</p>
+
+        <p>Jsem student webového inženýrství na FITu a pracuji jako web developer ve startupu. Jsem nadšenec do
+            moderních webových technologií a rád se neustále učím nové věci. Mimo školu a práci rád cestuji a fotím.
+            Tenhle předmět vnímám i jako skvělou příležitost konečně se ponořit do projektů z mého "backlogu", na které
+            mi kvůli škole a práci nezbývá čas.
+        </p>
+
+        <h2>Nápady na projekt</h2>
+        <p>Mám v hlavě pár nápadů, které bych rád zkusil:</p>
+        <ul>
+            <li><b>Řízený chaos v prohlížeči:</b> Tenhle nápad mi vlastně vnukla přednáška, kde nám byla ukázána
+                umělkyně, která na výstavě rozdala lidem lepítka, která mohli někam nalepit a tím vlastně sami
+                vytvořili samotné dílo. Okamžitě se mi vybavily digitální verze jako <a
+                    href="https://www.reddit.com/r/place/" target="_blank">r/place</a>, <a
+                    href="https://onemillioncheckboxes.com/" target="_blank">One
+                    Million Checkboxes</a> a <a href="https://neal.fun/internet-roadtrip/" target="_blank">Internet
+                    Roadtrip</a>. Chtěl bych zkusit postavit podobné digitální mraveniště, naprogramovat minimalistická
+                pravidla a pak jen s popcornem v ruce sledovat, co z toho kolektivní snahou (nebo bojem) v reálném čase
+                vznikne.
+            </li>
+            <li><b>Portfolio pro neviditelnou práci:</b> Většina mojí nejlepší práce, ať už jde o milisekundy ušetřené
+                cachováním nebo plynulost díky optimistic updates, je pro uživatele neviditelná. Proto bych si chtěl
+                vytvořit portfolio, které funguje jako rentgen. Místo obyčejných screenshotů bych chtěl vytvořit
+                interaktivní playground, kde si každý bude moct "osahat" a na vlastní oči porovnat rozdíl mezi líným a
+                bleskurychlým webem. Bude to přehlídka mých znalostí v oblasti web performance a všech kouzel pod
+                kapotou, od cachingu, optimistic updates, prefetchingu, lazy loadingu, až po streaming.</li>
+            <li><b>Splacení kreativního dluhu:</b> Můj největší osobní "technical debt" jsou tisíce nezpracovaných fotek
+                z cest. Chci se konečně prokousat jejich tříděním, editací a z každého tripu si vytvořit fotoknihu,
+                abych zaplnil prázdné poličky v knihovně vedle bakalářky.</li>
+        </ul>
+
+        <h2>Kontakt</h2>
+        <ul>
+            <li><b>Discord:</b> ploca14</li>
+            <li><b>E-mail:</b> plocivoj@fit.cvut.cz</li>
+        </ul>
+
+
+        <!--    DO NOT CHANGE STUFF BELLOW -->
+    </section>
+    <footer></footer>
+</body>
+
+</html>
